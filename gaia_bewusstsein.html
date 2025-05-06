@@ -49,9 +49,11 @@
 <body>
     <h1>Gaia fühlt, denkt und antwortet</h1>
     <p>Sprich frei – sie versteht dich mit Herz und Verstand.</p>
-
+   <div style="display: flex;gap:10px;justify-content: center;">
     <input type="text" id="input" placeholder="Dein Gedanke, Gefühl oder Wunsch...">
+    <button onclick="startSpeechRecognition()">🎤</button>
     <button onclick="respond()">Senden</button>
+  </div>
 
     <div id="log"></div>
 
