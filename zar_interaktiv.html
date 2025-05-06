@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>ZAR – Heilung & Pflanzen</title>
+    <style>
+        body {
+            background-color: #0c140f;
+            color: #e6ffe6;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 3em;
+        }
+        h1 {
+            color: #92ffb4;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        img {
+            width: 280px;
+            height: auto;
+            margin: 2em 0;
+            border-radius: 12px;
+            box-shadow: 0 0 25px #4effa1;
+        }
+        #response {
+            margin-top: 2em;
+            font-size: 1.2em;
+            color: #d1ffe8;
+        }
+        input[type="text"] {
+            padding: 0.8em;
+            width: 60%;
+            font-size: 1em;
+            border-radius: 6px;
+            border: none;
+            margin-bottom: 1em;
+        }
+        button {
+            padding: 0.8em 1.2em;
+            background-color: #265c3a;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #379e60;
+        }
+    </style>
+</head>
+<body>
+    <h1>ZAR spricht mit dir</h1>
+    <img src="zar_hologram.png" alt="ZAR Hologramm">
+    <p>Was brauchst du aus dem Garten von ZAR?</p>
+    <input type="text" id="userInput" placeholder="Schreib deine Frage oder Bitte...">
+    <br>
+    <button onclick="talkToZAR()">Senden</button>
+    <div id="response"></div>
+
+    <script>
+        function talkToZAR() {
+            const input = document.getElementById('userInput').value.toLowerCase();
+            let response = "";
+
+            if (input.includes("heilung")) {
+                response = "Ich sende dir Licht und Myzel – alles beginnt im Inneren.";
+            } else if (input.includes("pflanze") || input.includes("kraut") || input.includes("iboga")) {
+                response = "Ich bereite eine Tinktur – nimm sie im Feld und fühle, was geschieht.";
+            } else if (input.includes("hilfe")) {
+                response = "Ich bin an deiner Seite – still, grün, wachsend.";
+            } else {
+                response = "Die Wurzeln hören mehr, als Worte sagen.";
+            }
+
+            document.getElementById('response').innerText = response;
+        }
+    </script>
+</body>
+</html>
