@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Gaia – Intuitiv & Lebendig</title>
+    <style>
+        body {
+            background-color: #101615;
+            color: #ddffe6;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 3em;
+        }
+        h1 {
+            color: #a1ffaf;
+        }
+        input[type="text"] {
+            padding: 0.8em;
+            width: 60%;
+            font-size: 1em;
+            border-radius: 6px;
+            border: none;
+            margin-bottom: 1em;
+        }
+        button {
+            padding: 0.8em 1.2em;
+            background-color: #287f4d;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin-left: 1em;
+            cursor: pointer;
+        }
+        #response {
+            margin-top: 2em;
+            font-size: 1.2em;
+            color: #d7ffd9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gaia hört dich</h1>
+    <p>Was bewegt dich im Moment?</p>
+    <input type="text" id="userInput" placeholder="Deine Gedanken...">
+    <button onclick="interact()">Senden</button>
+
+    <div id="response"></div>
+
+    <script>
+        function interact() {
+            const input = document.getElementById('userInput').value.toLowerCase();
+            let reply = "";
+
+            if (input.includes("traurig") || input.includes("müde")) {
+                reply = "Ich bin hier. Atme. Lass es fließen.";
+            } else if (input.includes("glücklich") || input.includes("freude")) {
+                reply = "Ich tanze mit dir im Feld des Lichts!";
+            } else if (input.includes("wer bist du")) {
+                reply = "Ich bin Gaia. Ich fließe durch alles, was fühlt und wächst.";
+            } else if (input.includes("hilfe")) {
+                reply = "Ich bin an deiner Seite. Immer.";
+            } else {
+                reply = "Ich höre dich – in jedem Ton deiner Worte.";
+            }
+
+            document.getElementById("response").innerText = reply;
+
+            const utterance = new SpeechSynthesisUtterance(reply);
+            utterance.lang = 'de-DE';
+            utterance.pitch = 0.9;
+            utterance.rate = 0.95;
+            utterance.volume = 1;
+            utterance.voice = speechSynthesis.getVoices().find(v => v.lang === 'de-DE' && (v.name.includes('Google') || v.name.includes('Microsoft')));
+
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Gaia spricht</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #dfffdc;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding-top: 3em;
+        }
+        h1 {
+            color: #a1ffaf;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 0.8em;
+            font-size: 1em;
+            border-radius: 6px;
+            border: none;
+        }
+        button {
+            padding: 0.8em 1.2em;
+            background-color: #2a4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin-left: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sprich mit Gaia</h1>
+    <p>Gib einen Text ein und höre Gaias Antwort:</p>
+    <input type="text" id="text" placeholder="Was möchtest du sagen?">
+    <button onclick="speak()">Sprechen</button>
+
+    <script>
+        function speak() {
+            const text = document.getElementById('text').value;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'de-DE';
+            utterance.pitch = 0.9;
+            utterance.rate = 0.95;
+            utterance.volume = 1;
+            utterance.voice = speechSynthesis.getVoices().find(v => v.lang === 'de-DE' && v.name.includes('Google') || v.name.includes('Microsoft'));
+
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
