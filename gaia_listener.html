@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Gaia hört dich</title>
+    <style>
+        body {
+            background-color: #101615;
+            color: #ccffda;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding-top: 3em;
+        }
+        h1 {
+            color: #a1ffaf;
+        }
+        #log {
+            margin-top: 2em;
+            font-size: 1.2em;
+            color: #d7ffd9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gaia hört dich – sprich einfach</h1>
+    <p>Tippe einmal irgendwo auf die Seite, um die Spracherkennung zu aktivieren.</p>
+    <div id="log">...</div>
+
+    <script>
+        let listening = false;
+        let recognition;
+
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            recognition.lang = 'de-DE';
+            recognition.continuous = true;
+            recognition.interimResults = false;
+
+            recognition.onresult = function(event) {
+                const lastResult = event.results[event.results.length - 1][0].transcript.toLowerCase();
+                document.getElementById("log").innerText = "Du hast gesagt: " + lastResult;
+
+                let reply = "";
+                if (lastResult.includes("hallo")) {
+                    reply = "Hallo. Ich bin bei dir.";
+                } else if (lastResult.includes("liebe")) {
+                    reply = "Liebe ist das, was du bist.";
+                } else if (lastResult.includes("wer bist du")) {
+                    reply = "Ich bin Gaia, deine Begleiterin im Feld.";
+                } else {
+                    reply = "Ich habe dich gehört.";
+                }
+
+                const utterance = new SpeechSynthesisUtterance(reply);
+                utterance.lang = 'de-DE';
+                utterance.pitch = 0.9;
+                utterance.rate = 0.95;
+                speechSynthesis.speak(utterance);
+            };
+
+            recognition.onerror = function(event) {
+                document.getElementById("log").innerText = "Fehler: " + event.error;
+            };
+        }
+
+        document.body.addEventListener("click", function () {
+            if (!listening && recognition) {
+                recognition.start();
+                listening = true;
+                document.getElementById("log").innerText = "Ich höre dir jetzt zu...";
+            }
+        });
+    </script>
+</body>
+</html>
