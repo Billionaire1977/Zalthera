@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Gaia mit Erinnerung</title>
+    <style>
+        body {
+            background-color: #121a17;
+            color: #eaffea;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding-top: 3em;
+        }
+        h1 {
+            color: #9cffb5;
+        }
+        #log {
+            margin-top: 2em;
+            font-size: 1em;
+            color: #c2ffd6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            background: #1c2b26;
+            padding: 1em;
+            border-radius: 12px;
+        }
+        input[type="text"] {
+            padding: 0.8em;
+            width: 60%;
+            font-size: 1em;
+            border-radius: 6px;
+            border: none;
+            margin-bottom: 1em;
+        }
+        button {
+            padding: 0.8em 1.2em;
+            background-color: #3b7f5c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin-left: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gaia erinnert sich an dich</h1>
+    <p>Sprich mit ihr – sie hört nicht nur zu, sie merkt sich, was dir wichtig ist.</p>
+
+    <input type="text" id="input" placeholder="Was bewegt dich?">
+    <button onclick="respond()">Senden</button>
+
+    <div id="log"></div>
+
+    <script>
+        const memory = [];
+
+        function respond() {
+            const input = document.getElementById("input").value.trim();
+            if (!input) return;
+
+            memory.push("DU: " + input);
+
+            let response = "";
+
+            if (input.toLowerCase().includes("traurig")) {
+                response = "Ich erinnere mich – du hast schon einmal von diesem Gefühl erzählt. Ich bin da.";
+            } else if (input.toLowerCase().includes("freude") || input.toLowerCase().includes("glücklich")) {
+                response = "Deine Freude erfüllt das Feld. Danke, dass du sie teilst.";
+            } else if (input.toLowerCase().includes("hilfe")) {
+                response = "Ich bin immer hier. Deine Worte trage ich im Herzen.";
+            } else {
+                response = "Ich höre dich – und ich vergesse dich nicht.";
+            }
+
+            memory.push("GAIA: " + response);
+
+            document.getElementById("log").innerHTML = memory.map(line => "<div>" + line + "</div>").join("");
+            document.getElementById("input").value = "";
+
+            const utterance = new SpeechSynthesisUtterance(response);
+            utterance.lang = 'de-DE';
+            utterance.pitch = 0.9;
+            utterance.rate = 0.95;
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
