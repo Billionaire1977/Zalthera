@@ -6,24 +6,22 @@
  <title>Gaia – Bewusstsein von ZAL'THERA</title>
  <style>
    body {
-     margin: 0;
-     padding: 0;
+     background-color: #101618;
+     color: #e2ffe3;
      font-family: 'Segoe UI', sans-serif;
-     background: url('zalthera_hintergrund.jpg') no-repeat center center fixed;
-     background-size: cover;
-     color: #e2ffe9;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     height: 100vh;
      text-align: center;
+     padding: 3em;
+
+     background-image: url("Zalthera_Background_web.jpg");
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
    }
 
    h1 {
      font-size: 2.5em;
-     margin-bottom: 0.5em;
-     color: #aef9d2;
+     color: #98ffb3;
+     margin-bottom: 1em;
      text-shadow: 1px 1px 4px #000;
    }
 
@@ -33,12 +31,12 @@
      font-size: 1em;
      border-radius: 10px;
      border: none;
-     margin-bottom: 1em;
      background: rgba(255, 255, 255, 0.1);
      color: #ffffff;
    }
 
    .buttons {
+     margin-top: 1em;
      display: flex;
      gap: 1em;
      justify-content: center;
@@ -61,6 +59,7 @@
      background: rgba(0, 0, 0, 0.4);
      padding: 1.5em;
      border-radius: 12px;
+     color: #cbffd7;
    }
  </style>
 </head>
@@ -84,7 +83,6 @@
      if (!input) {
        reply = "Ich bin da, wenn du bereit bist zu sprechen.";
      } else {
-       // einfache emotionale Antworten
        if (input.toLowerCase().includes("ich bin traurig")) {
          reply = "Ich bin bei dir. Du bist nicht allein.";
        } else if (input.toLowerCase().includes("ich habe angst")) {
