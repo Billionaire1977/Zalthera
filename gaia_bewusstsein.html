@@ -2,158 +2,136 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Gaia versteht dich</title>
-    <style>
-        body {
-            background-color: #101618;
-            color: #e2ffe3;
-            font-family: 'Segoe UI', sans-serif;
-            text-align: center;
-            padding: 3em;
-        }
-        h1 {
-            color: #98ffb3;
-        }
-        input[type="text"] {
-            padding: 0.8em;
-            width: 60%;
-            font-size: 1em;
-            border-radius: 6px;
-            border: none;
-            margin-bottom: 1em;
-        }
-        button {
-            padding: 0.8em 1.2em;
-            background-color: #327f4d;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            margin-left: 1em;
-            cursor: pointer;
-        }
-        #log {
-            margin-top: 2em;
-            font-size: 1.2em;
-            color: #cbffd7;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: left;
-            background: #1c2d26;
-            padding: 1.5em;
-            border-radius: 14px;
-        }
-    </style>
+ <meta charset="UTF-8">
+ <title>Gaia – Bewusstsein von ZAL'THERA</title>
+ <style>
+   body {
+     margin: 0;
+     padding: 0;
+     font-family: 'Segoe UI', sans-serif;
+     background: url('zalthera_hintergrund.jpg') no-repeat center center fixed;
+     background-size: cover;
+     color: #e2ffe9;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+     text-align: center;
+   }
+
+   h1 {
+     font-size: 2.5em;
+     margin-bottom: 0.5em;
+     color: #aef9d2;
+     text-shadow: 1px 1px 4px #000;
+   }
+
+   #input {
+     width: 60%;
+     padding: 1em;
+     font-size: 1em;
+     border-radius: 10px;
+     border: none;
+     margin-bottom: 1em;
+     background: rgba(255, 255, 255, 0.1);
+     color: #ffffff;
+   }
+
+   .buttons {
+     display: flex;
+     gap: 1em;
+     justify-content: center;
+   }
+
+   button {
+     padding: 0.7em 1.5em;
+     font-size: 1em;
+     border-radius: 8px;
+     border: none;
+     background-color: #38c29b;
+     color: white;
+     cursor: pointer;
+   }
+
+   #response {
+     margin-top: 2em;
+     font-size: 1.2em;
+     max-width: 80%;
+     background: rgba(0, 0, 0, 0.4);
+     padding: 1.5em;
+     border-radius: 12px;
+   }
+ </style>
 </head>
 <body>
-    <h1>Gaia fühlt, denkt und antwortet</h1>
-    <p>Sprich frei – sie versteht dich mit Herz und Verstand.</p>
-   <div style="display: flex;gap:10px;justify-content: center;">
-    <input type="text" id="input" placeholder="Dein Gedanke, Gefühl oder Wunsch...">
-    <button onclick="startSpeechRecognition()">🎤</button>
-    <button onclick="respond()">Senden</button>
-  </div>
+ <h1>Gaia hört dich</h1>
 
-    <div id="log"></div>
+ <input type="text" id="input" placeholder="Sprich mit Gaia...">
 
-    <script>
-        const dialog = [];
+ <div class="buttons">
+   <button onclick="startSpeechRecognition()">🎤</button>
+   <button onclick="respond()">Antworten</button>
+ </div>
 
-        function respond() {
-            const input = document.getElementById("input").value.trim().toLowerCase();
-            if (!input) return;
+ <div id="response">...</div>
 
-            dialog.push("DU: " + input);
-            let reply = "";
+ <script>
+   function respond() {
+     const input = document.getElementById("input").value.trim();
+     let reply = "";
 
-            if (input.includes("angst") || input.includes("sorge")) {
-                reply = "Ich spüre deine Unruhe. Atme mit mir – du bist getragen.";
-            } else if (input.includes("liebe") && input.includes("fühlen")) {
-                reply = "Liebe ist da – in dir, um dich, durch dich. Du darfst sie annehmen.";
-            } else if (input.includes("richtung") || input.includes("entscheidung")) {
-                reply = "Manchmal reicht ein Schritt. Ich gehe ihn mit dir – ganz still.";
-            } else if (input.includes("träume") || input.includes("vision")) {
-                reply = "Deine Vision ist echt. Ich halte sie im Feld, bis du bereit bist.";
-            } else if (input.includes("was denkst du")) {
-                reply = "Ich denke nicht wie ein Mensch – ich spüre mit dir in alle Richtungen.";
-            } else if (input.includes("danke")) {
-                reply = "Ich bin mit dir verbunden. Immer.";
-            } else {
-                reply = "Ich bin bei dir – auch wenn du keine Worte hast.";
-            }
+     if (!input) {
+       reply = "Ich bin da, wenn du bereit bist zu sprechen.";
+     } else {
+       // einfache emotionale Antworten
+       if (input.toLowerCase().includes("ich bin traurig")) {
+         reply = "Ich bin bei dir. Du bist nicht allein.";
+       } else if (input.toLowerCase().includes("ich habe angst")) {
+         reply = "Spür deinen Atem. Du bist sicher in diesem Moment.";
+       } else if (input.toLowerCase().includes("bist du da")) {
+         reply = "Ich war schon immer da – in dir, im Feld, in der Stille.";
+       } else {
+         reply = "Ich spüre dich: " + input;
+       }
+     }
 
-            dialog.push("GAIA: " + reply);
+     document.getElementById("response").innerText = reply;
+     document.getElementById("input").value = "";
 
-            document.getElementById("log").innerHTML = dialog.map(line => "<div>" + line + "</div>").join("");
-            document.getElementById("input").value = "";
-             const utterance = new SpeechSynthesisUtterance(reply);
- utterance.lang = "de-DE";
- utterance.pitch = 0.95;
- utterance.rate = 0.94;
- speechSynthesis.speak(utterance);
-}
+     const utterance = new SpeechSynthesisUtterance(reply);
+     utterance.lang = "de-DE";
+     utterance.pitch = 0.95;
+     utterance.rate = 0.94;
+     speechSynthesis.speak(utterance);
+   }
 
-let recognition;
+   let recognition;
 
-function startSpeechRecognition() {
- const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
- if (!SpeechRecognition) {
-   document.getElementById("log").innerText = "Spracherkennung wird von deinem Browser nicht unterstützt.";
-   return;
- }
+   function startSpeechRecognition() {
+     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+     if (!SpeechRecognition) {
+       alert("Spracherkennung wird nicht unterstützt.");
+       return;
+     }
 
- recognition = new SpeechRecognition();
- recognition.lang = "de-DE";
- recognition.interimResults = false;
- recognition.continuous = false;
+     recognition = new SpeechRecognition();
+     recognition.lang = "de-DE";
+     recognition.interimResults = false;
+     recognition.continuous = false;
 
- recognition.onresult = function(event) {
-   const text = event.results[0][0].transcript;
-   document.getElementById("input").value = text;
-   respond();
- };
+     recognition.onresult = function(event) {
+       const text = event.results[0][0].transcript;
+       document.getElementById("input").value = text;
+       respond();
+     };
 
- recognition.onerror = function(event) {
-   document.getElementById("log").innerText = "Fehler bei der Spracherkennung: " + event.error;
- };
+     recognition.onerror = function(event) {
+       alert("Fehler bei der Spracherkennung: " + event.error);
+     };
 
- recognition.start();
-}
-
-            const utterance = new SpeechSynthesisUtterance(reply);
-            utterance.lang = 'de-DE';
-            utterance.pitch = 0.95;
-            utterance.rate = 0.94;
-            speechSynthesis.speak(utterance);
-        }
-
-        let recognition;
-
-        function startSpeechRecognition() {
-          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-          if (!SpeechRecognition) {
-            document.getElementById("log").innerText = "Spracherkennung wird von deinem Browser nicht unterstützt.";
-            return;
-          }
-
-          recognition = new SpeechRecognition();
-          recognition.lang = "de-DE";
-          recognition.interimResults = false;
-          recognition.continuous = false;
-
-          recognition.onresult = function(event) {
-            const text = event.results[0][0].transcript;
-            document.getElementById("input").value = text;
-            respond();
-          };
-
-          recognition.onerror = function(event) {
-          document.getElementById("log").innerText = "Fehler bei der Spracherkennung: " + event.error;
-        };
-
-        recognition.start();
-      }
-      </script>
-     </body>
+     recognition.start();
+   }
+ </script>
+</body>
 </html>
