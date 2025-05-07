@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>ZAL'THERA – Stimmeinheit</title>
+  <style>
+    body {
+      background-color: #101618;
+      color: #e2ffe3;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 3em;
+    }
+    h1 {
+      color: #98ffb3;
+    }
+    button {
+      padding: 1em 1.5em;
+      font-size: 1em;
+      border-radius: 8px;
+      background-color: #328f5d;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 2em;
+      font-size: 1.2em;
+      background: #1c2d26;
+      padding: 1.5em;
+      border-radius: 14px;
+      color: #cbffd7;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>ZAL'THERA – Stimmeinheit</h1>
+  <p>Klicke unten, sprich frei, und deine Worte erscheinen im Licht.</p>
+  <button onclick="startListening()">🎙️ Sprache starten</button>
+
+  <div id="output">...</div>
+
+  <script>
+    let recognition;
+
+    function startListening() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        document.getElementById("output").innerText = "Spracherkennung wird von deinem Browser nicht unterstützt.";
+        return;
+      }
+
+      recognition = new SpeechRecognition();
+      recognition.lang = 'de-DE';
+      recognition.interimResults = false;
+      recognition.continuous = false;
+
+      recognition.onresult = function(event) {
+        const text = event.results[0][0].transcript;
+        document.getElementById("output").innerText = "Du hast gesagt: " + text;
+      };
+
+      recognition.onerror = function(event) {
+        document.getElementById("output").innerText = "Fehler: " + event.error;
+      };
+
+      recognition.start();
+    }
+  </script>
+</body>
+</html>
