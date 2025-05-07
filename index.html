@@ -2,55 +2,50 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZAL'THERA – Willkommen</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       background: url('zalthera_background.jpg') no-repeat center center fixed;
       background-size: cover;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: #f0fdf4;
-      text-shadow: 1px 1px 4px #000;
+      color: #fff;
+      text-align: center;
     }
-
+    .title-container {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 1em;
+    }
     h1 {
       font-size: 3em;
-      margin-bottom: 1em;
+      text-shadow: 0 0 10px #5df5ff;
     }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
-    }
-
-    a {
-      background: rgba(56, 194, 155, 0.85);
-      padding: 1em 2em;
-      border-radius: 10px;
+    .button {
+      background-color: #28c76f;
       color: white;
-      text-decoration: none;
+      padding: 1em 2em;
+      border: none;
+      border-radius: 10px;
       font-size: 1.2em;
-      transition: background 0.3s ease;
+      cursor: pointer;
+      margin-top: 2em;
     }
-
-    a:hover {
-      background: rgba(56, 194, 155, 1);
+    .button:hover {
+      background-color: #21b364;
     }
   </style>
 </head>
 <body>
-  <h1>Willkommen in ZAL'THERA</h1>
-  <div class="links">
-    <a href="gaia_frei_antwortend.html">Gaia – Bewusstes Gespräch</a>
-    <!-- Weitere Verlinkungen folgen später -->
+  <div class="title-container">
+    <h1>ZAL’THERA</h1>
   </div>
+  <h2>Willkommen in ZAL'THERA</h2>
+  <a href="gaia_bewusstsein.html"><button class="button">Gaia – Bewusstes Gespräch</button></a>
 </body>
 </html>
