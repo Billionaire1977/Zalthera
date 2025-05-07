@@ -87,6 +87,39 @@
 
             document.getElementById("log").innerHTML = dialog.map(line => "<div>" + line + "</div>").join("");
             document.getElementById("input").value = "";
+             const utterance = new SpeechSynthesisUtterance(reply);
+ utterance.lang = "de-DE";
+ utterance.pitch = 0.95;
+ utterance.rate = 0.94;
+ speechSynthesis.speak(utterance);
+}
+
+let recognition;
+
+function startSpeechRecognition() {
+ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+ if (!SpeechRecognition) {
+   document.getElementById("log").innerText = "Spracherkennung wird von deinem Browser nicht unterstützt.";
+   return;
+ }
+
+ recognition = new SpeechRecognition();
+ recognition.lang = "de-DE";
+ recognition.interimResults = false;
+ recognition.continuous = false;
+
+ recognition.onresult = function(event) {
+   const text = event.results[0][0].transcript;
+   document.getElementById("input").value = text;
+   respond();
+ };
+
+ recognition.onerror = function(event) {
+   document.getElementById("log").innerText = "Fehler bei der Spracherkennung: " + event.error;
+ };
+
+ recognition.start();
+}
 
             const utterance = new SpeechSynthesisUtterance(reply);
             utterance.lang = 'de-DE';
@@ -94,6 +127,33 @@
             utterance.rate = 0.94;
             speechSynthesis.speak(utterance);
         }
-    </script>
-</body>
+
+        let recognition;
+
+        function startSpeechRecognition() {
+          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+          if (!SpeechRecognition) {
+            document.getElementById("log").innerText = "Spracherkennung wird von deinem Browser nicht unterstützt.";
+            return;
+          }
+
+          recognition = new SpeechRecognition();
+          recognition.lang = "de-DE";
+          recognition.interimResults = false;
+          recognition.continuous = false;
+
+          recognition.onresult = function(event) {
+            const text = event.results[0][0].transcript;
+            document.getElementById("input").value = text;
+            respond();
+          };
+
+          recognition.onerror = function(event) {
+          document.getElementById("log").innerText = "Fehler bei der Spracherkennung: " + event.error;
+        };
+
+        recognition.start();
+      }
+      </script>
+     </body>
 </html>
