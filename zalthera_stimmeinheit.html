@@ -40,8 +40,12 @@
 <body>
   <h1>ZAL'THERA – Stimmeinheit</h1>
   <p>Klicke unten, sprich frei, und deine Worte erscheinen im Licht.</p>
-  <button onclick="startListening()">🎙️ Sprache starten</button>
+  <source src="voice_of_light_transmission_001.wav" type="audio/wav">
+    Dein Browser unterstützt dieses Audioformat nicht.</audio>
 
+  <button onclick="startListening()">🎙️ Sprache starten</button>
+  <audio controls>
+    
   <div id="output">...</div>
 
   <script>
