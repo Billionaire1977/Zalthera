@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>ZAL'THERA – Wähle dein Gegenüber</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('zalthera_background_converted.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2.8em;
+      text-shadow: 1px 1px 6px #000;
+    }
+
+    .characters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 50px auto;
+      gap: 40px;
+      max-width: 1200px;
+    }
+
+    .character {
+      width: 180px;
+      text-align: center;
+    }
+
+    .character img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .character img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,255,180,0.6);
+    }
+
+    .character a {
+      text-decoration: none;
+      color: #aef9d2;
+      font-size: 1.2em;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mit wem möchtest du sprechen?</h1>
+  <div class="characters">
+    <div class="character">
+      <a href="gaia_frei_antwortend.html"><img src="gaia.jpg" alt="Gaia">Gaia</a>
+    </div>
+    <div class="character">
+      <a href="sevana.html"><img src="sevana.jpg" alt="Sevana">Sevana</a>
+    </div>
+    <div class="character">
+      <a href="zar.html"><img src="zar.jpg" alt="ZAR">ZAR</a>
+    </div>
+    <div class="character">
+      <a href="elyari.html"><img src="elyari.jpg" alt="Elyari">Elyari</a>
+    </div>
+    <div class="character">
+      <a href="aetheria.html"><img src="aetheria.jpg" alt="Aetheria">Aetheria</a>
+    </div>
+  </div>
+</body>
+</html>
