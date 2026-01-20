@@ -5,39 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0a0d14" />
   <title>Impressum — ZAL’THERA</title>
+  <meta name="description" content="Impressum von ZAL’THERA." />
   <link rel="icon" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
   <header class="topbar">
     <div class="container topbar__inner">
-      <a class="brand" href="index.html"><span class="brand__mark">△</span><span class="brand__name">ZAL’THERA</span></a>
+      <a class="brand" href="index.html" aria-label="ZAL’THERA Startseite">
+        <span class="brand__mark" aria-hidden="true">△</span>
+        <span class="brand__name">ZAL’THERA</span>
+      </a>
+
       <div class="topbar__actions">
         <a class="btn btn--ghost" href="index.html">Zurück</a>
-        <a class="btn btn--primary" href="privacy.html">Privacy</a>
+        <a class="btn btn--primary" href="privacy.html">Datenschutz</a>
       </div>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <div class="section__head">
-        <h2>Impressum</h2>
-        <p>Platzhalter — bitte mit deinen echten Angaben ergänzen.</p>
-      </div>
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Impressum</h2>
+          <p>Platzhalter — bitte mit deinen echten Angaben ergänzen.</p>
+        </div>
 
-      <div class="card glass">
-        <h3>Angaben gemäß § 5 TMG</h3>
-        <p class="muted">
-          Trage hier deine offiziellen Daten ein (Name/Firma, Anschrift, Kontakt).
-          Wenn du noch keine Firmendaten öffentlich nutzen willst, sag’s mir, dann bauen wir eine rechtssichere Minimal-Variante.
-        </p>
+        <article class="card glass content">
+          <h3>Angaben gemäß § 5 TMG</h3>
+          <p class="muted">
+            Trage hier deine offiziellen Daten ein (Name/Firma, Anschrift, Kontakt).
+            Wenn du noch keine vollständige Adresse veröffentlichen willst, sag’s mir: dann bauen wir eine rechtssichere Variante
+            passend zu deinem Setup (privat / Geschäft / juristische Person).
+          </p>
+
+          <hr class="hr" />
+
+          <h3>Kontakt</h3>
+          <p class="muted">E-Mail: <a class="link" href="mailto:patrick_walker1977@yahoo.com">patrick_walker1977@yahoo.com</a></p>
+
+          <hr class="hr" />
+
+          <h3>Haftung für Inhalte</h3>
+          <p class="muted">
+            Inhalte werden mit Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität kann jedoch keine Gewähr übernommen werden.
+          </p>
+
+          <h3>Haftung für Links</h3>
+          <p class="muted">
+            Diese Website kann Links zu externen Webseiten Dritter enthalten. Auf deren Inhalte besteht kein Einfluss; deshalb kann dafür keine Gewähr übernommen werden.
+          </p>
+
+          <h3>Urheberrecht</h3>
+          <p class="muted">
+            Inhalte und Werke auf dieser Website unterliegen dem Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung
+            außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung.
+          </p>
+        </article>
+
+        <div class="footer glass">
+          <div class="footer__left">
+            <div class="footer__brand">ZAL’THERA</div>
+            <div class="micro muted">Governance-basierte Systeme. Erklärbar. Kontrollierbar. Menschlich.</div>
+          </div>
+          <div class="footer__right">
+            <a class="link" href="privacy.html">Datenschutz</a>
+            <span class="sep">•</span>
+            <a class="link" href="index.html">Start</a>
+            <span class="sep">•</span>
+            <span class="micro muted">© <span id="year"></span> Patrick Walker</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-
 
