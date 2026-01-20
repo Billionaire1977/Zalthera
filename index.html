@@ -9,20 +9,15 @@
   <title>ZAL’THERA — Governance-basierte Systeme</title>
   <meta name="description" content="ZAL’THERA baut Governance-basierte Systeme: erklärbar, kontrollierbar, menschlich. ORIGIN als Einstieg — Aurelion als Reporter-Instanz." />
 
-  <link rel="canonical" href="https://DEINE-DOMAIN.TLD/" />
-
   <meta property="og:title" content="ZAL’THERA — Governance-basierte Systeme" />
   <meta property="og:description" content="Erklärbar. Kontrollierbar. Menschlich." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://DEINE-DOMAIN.TLD/" />
-  <meta property="og:image" content="https://DEINE-DOMAIN.TLD/assets/img/og-cover.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="assets/img/og-cover.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ZAL’THERA — Governance-basierte Systeme" />
   <meta name="twitter:description" content="Erklärbar. Kontrollierbar. Menschlich." />
-  <meta name="twitter:image" content="https://DEINE-DOMAIN.TLD/assets/img/og-cover.png" />
+  <meta name="twitter:image" content="assets/img/og-cover.png" />
 
   <link rel="icon" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -47,7 +42,43 @@
 
       <div class="topbar__actions">
         <a class="btn btn--ghost" href="origin.html">ORIGIN</a>
+
+        <button class="btn btn--ghost navbtn" type="button" aria-label="Menü öffnen" aria-controls="mobileNav" aria-expanded="false">
+          ☰
+        </button>
+
         <a class="btn btn--primary" href="#kontakt">Starten</a>
+      </div>
+    </div>
+
+    <div id="mobileNav" class="mobileNav" hidden>
+      <div class="container">
+        <div class="mobileNav__panel glass">
+          <div class="mobileNav__head">
+            <div class="mobileNav__title">Navigation</div>
+            <button class="btn btn--ghost navbtn navbtn--close" type="button" aria-label="Menü schließen" aria-controls="mobileNav" aria-expanded="true">
+              ✕
+            </button>
+          </div>
+
+          <div class="mobileNav__links">
+            <a class="mobileNav__link" href="#systeme">Systeme</a>
+            <a class="mobileNav__link" href="#prinzipien">Prinzipien</a>
+            <a class="mobileNav__link" href="#showcase">Showcase</a>
+            <a class="mobileNav__link" href="#kontakt">Kontakt</a>
+            <div class="mobileNav__hr"></div>
+            <a class="mobileNav__link" href="origin.html">ORIGIN</a>
+            <a class="mobileNav__link" href="aurelion.html">Aurelion</a>
+            <a class="mobileNav__link" href="governance.html">Governance</a>
+            <div class="mobileNav__hr"></div>
+            <a class="mobileNav__link" href="privacy.html">Datenschutz</a>
+            <a class="mobileNav__link" href="impressum.html">Impressum</a>
+          </div>
+
+          <div class="mobileNav__foot">
+            <span class="micro muted">Policy → Identity → Audit → Execute</span>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -104,7 +135,7 @@
             <div class="panel__tag">Demo-Core</div>
           </div>
 
-          <ol class="chain" aria-label="Governance Kette (Demo)">
+          <ol class="chain" aria-label="Governance Kette">
             <li class="chain__item"><span class="dot dot--cyan"></span><span>Intent erkannt</span></li>
             <li class="chain__item"><span class="dot dot--gold"></span><span>Policy geprüft</span></li>
             <li class="chain__item"><span class="dot dot--violet"></span><span>Identity bestätigt</span></li>
@@ -254,6 +285,73 @@
             <div class="micro muted">Mock-Preview (Design-Sprache der Marke).</div>
           </div>
         </div>
+
+        <div class="shots">
+          <article class="shot glass" aria-label="ORIGIN Screen Placeholder">
+            <div class="shot__frame">
+              <div class="shot__bar">
+                <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
+              </div>
+              <div class="shot__body">
+                <div class="shot__title">ORIGIN — Daily Run</div>
+                <div class="shot__pillRow">
+                  <span class="pill pill--soft">Daily</span>
+                  <span class="pill pill--soft">Ruhig</span>
+                  <span class="pill pill--soft">Ohne Druck</span>
+                </div>
+                <div class="shot__card">
+                  <div class="shot__cardH">Was hat sich gezeigt?</div>
+                  <div class="shot__cardP muted">3–5 neutrale Sätze als sichtbarer Fortschritt.</div>
+                </div>
+              </div>
+            </div>
+            <div class="shot__cap">
+              <strong>ORIGIN</strong> — Einstieg & Ritual
+            </div>
+          </article>
+
+          <article class="shot glass" aria-label="Aurelion Screen Placeholder">
+            <div class="shot__frame">
+              <div class="shot__bar">
+                <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
+              </div>
+              <div class="shot__body">
+                <div class="shot__title">Aurelion — Explain WHY</div>
+                <div class="shot__card">
+                  <div class="shot__cardH">Blockiert</div>
+                  <div class="shot__cardP muted">Grund: SafeMode aktiv · Zeitfenster außerhalb.</div>
+                </div>
+                <div class="shot__card">
+                  <div class="shot__cardH">Erlaubt</div>
+                  <div class="shot__cardP muted">Grund: Policy OK · Identity bestätigt · Audit geschrieben.</div>
+                </div>
+              </div>
+            </div>
+            <div class="shot__cap">
+              <strong>Aurelion</strong> — Reporter-Instanz
+            </div>
+          </article>
+
+          <article class="shot glass" aria-label="Governance Screen Placeholder">
+            <div class="shot__frame">
+              <div class="shot__bar">
+                <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
+              </div>
+              <div class="shot__body">
+                <div class="shot__title">Governance — Chain</div>
+                <div class="shot__list">
+                  <div class="shot__li"><span class="dot dot--gold"></span><span>Policy</span></div>
+                  <div class="shot__li"><span class="dot dot--violet"></span><span>Identity</span></div>
+                  <div class="shot__li"><span class="dot dot--teal"></span><span>Audit</span></div>
+                  <div class="shot__li"><span class="dot dot--green"></span><span>Execute</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="shot__cap">
+              <strong>Governance Core</strong> — Standard
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -279,7 +377,7 @@
             <h3>Für App Store</h3>
             <p>ORIGIN ist Einstieg. ZAL’THERA ist Dach. Die Seite bleibt bewusst klar & seriös.</p>
             <div class="contact__row">
-              <span class="muted">Datenschutz</span>
+              <span class="muted">Privacy</span>
               <span><a class="link" href="privacy.html">Datenschutzerklärung →</a></span>
             </div>
           </div>
@@ -305,3 +403,4 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
