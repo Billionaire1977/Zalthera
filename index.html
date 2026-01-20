@@ -1,66 +1,295 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>ZAL’THERA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      background: #0b0f14;
-      color: #e6d7a3;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      text-align: center;
-    }
-    header {
-      padding: 80px 20px;
-    }
-    h1 {
-      font-size: 3em;
-      letter-spacing: 0.1em;
-    }
-    p {
-      max-width: 600px;
-      margin: 20px auto;
-      line-height: 1.6;
-      color: #c9c9c9;
-    }
-    section {
-      padding: 60px 20px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a0d14" />
+  <title>ZAL’THERA — Governance-basierte Systeme</title>
+  <meta name="description" content="ZAL’THERA baut Governance-basierte Systeme: erklärbar, kontrollierbar, menschlich. Origin als Einstieg — Aurelion als Reporter-Instanz." />
+
+  <meta property="og:title" content="ZAL’THERA — Governance-basierte Systeme" />
+  <meta property="og:description" content="Erklärbar. Kontrollierbar. Menschlich." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-<header>
-  <h1>ZAL’THERA</h1>
-  <p>Governance-basierte Systeme.  
-     Erklärbar. Kontrollierbar. Menschlich.</p>
-</header>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html" aria-label="ZAL’THERA Startseite">
+        <span class="brand__mark" aria-hidden="true">△</span>
+        <span class="brand__name">ZAL’THERA</span>
+      </a>
 
-<section>
-  <h2>ORIGIN</h2>
-  <p>Ein Einstieg in das ZAL’THERA-Universum.  
-     Wahrnehmung, Zustand, Erklärung.</p>
-</section>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="nav__link" href="#systeme">Systeme</a>
+        <a class="nav__link" href="#prinzipien">Prinzipien</a>
+        <a class="nav__link" href="#showcase">Showcase</a>
+        <a class="nav__link" href="#kontakt">Kontakt</a>
+      </nav>
 
-<section>
-  <h2>AURELION</h2>
-  <p>Reporter-Instanz.  
-     Keine Entscheidungen. Keine Ausführung.  
-     Nur Klarheit.</p>
-</section>
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="origin.html">ORIGIN</a>
+        <a class="btn btn--primary" href="#kontakt">Starten</a>
+      </div>
+    </div>
+  </header>
 
-<section>
-  <h2>LUMA</h2>
-  <p>Kreativer Spiegel.  
-     Resonanz, Sprache, Gestaltung.</p>
-</section>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="bg-glow" aria-hidden="true"></div>
 
-<footer style="padding:40px; font-size:0.8em; color:#666;">
-  © Patrick Walker · ZAL’THERA
-</footer>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <div class="kicker">
+            <span class="pill">Governance OS</span>
+            <span class="pill pill--soft">Local-first</span>
+            <span class="pill pill--soft">Audit-Pflicht</span>
+          </div>
 
+          <h1 class="hero__title">
+            Systeme, die nicht „einfach handeln“ —
+            <span class="accent">sondern zuerst erklären.</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            ZAL’THERA ist ein Framework aus kontrollierbaren, nachvollziehbaren Systemen.
+            Jede Ausführung läuft über eine Kette aus <strong>Policy → Identity → Audit → Execute</strong>.
+            Kein Chaos. Keine Blackbox. Nur Klarheit.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#systeme">Systeme ansehen</a>
+            <a class="btn btn--ghost" href="aurelion.html">Aurelion verstehen</a>
+          </div>
+
+          <div class="hero__metrics">
+            <div class="metric">
+              <div class="metric__value">Erklärbar</div>
+              <div class="metric__label">WHY sichtbar</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value">Kontrollierbar</div>
+              <div class="metric__label">Gates + SafeMode</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value">Beweisbar</div>
+              <div class="metric__label">Audit-Trail & Export</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__panel glass">
+          <div class="panel__header">
+            <div class="panel__title">Live-Kette</div>
+            <div class="panel__tag">Demo-Core</div>
+          </div>
+
+          <ol class="chain" aria-label="Governance Kette">
+            <li class="chain__item"><span class="dot dot--cyan"></span><span>Intent erkannt</span></li>
+            <li class="chain__item"><span class="dot dot--gold"></span><span>Policy geprüft</span></li>
+            <li class="chain__item"><span class="dot dot--violet"></span><span>Identity bestätigt</span></li>
+            <li class="chain__item"><span class="dot dot--teal"></span><span>Audit geschrieben</span></li>
+            <li class="chain__item"><span class="dot dot--green"></span><span>Execute freigegeben</span></li>
+          </ol>
+
+          <div class="panel__footer">
+            <span class="micro">Durch Liebe regieren — bauen, nicht zerstören.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEME -->
+    <section id="systeme" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Systeme</h2>
+          <p>Ein Dach. Mehrere Systeme. Eine Sprache: Governance.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card glass">
+            <div class="card__top">
+              <div class="badge">ORIGIN</div>
+              <div class="icon icon--cyan" aria-hidden="true">◎</div>
+            </div>
+            <h3>ORIGIN</h3>
+            <p>Der Einstieg in das ZAL’THERA-Universum: Wahrnehmung, Zustand, Erklärung. Ruhig. Klar. Ohne Druck.</p>
+            <div class="card__actions">
+              <a class="link" href="origin.html">Mehr erfahren →</a>
+            </div>
+          </article>
+
+          <article class="card glass">
+            <div class="card__top">
+              <div class="badge">AURELION</div>
+              <div class="icon icon--gold" aria-hidden="true">△</div>
+            </div>
+            <h3>Aurelion</h3>
+            <p>Reporter-Instanz: keine Entscheidungen, keine Ausführung. Zeigt Status, Gründe, Grenzen. Macht Systeme verstehbar.</p>
+            <div class="card__actions">
+              <a class="link" href="aurelion.html">Mehr erfahren →</a>
+            </div>
+          </article>
+
+          <article class="card glass">
+            <div class="card__top">
+              <div class="badge">GOVERNANCE</div>
+              <div class="icon icon--violet" aria-hidden="true">⟁</div>
+            </div>
+            <h3>Governance Core</h3>
+            <p>Policy → Identity → Audit → Execute. Zeitfenster, SafeMode, Target-Scoping, Audit-Export. Kein Bypass.</p>
+            <div class="card__actions">
+              <a class="link" href="governance.html">Mehr erfahren →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__note glass">
+          <strong>Wichtig:</strong> ZAL’THERA ist nicht „mehr Features“. Es ist ein Standard, wie Handlungen sicher und erklärbar werden.
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINZIPIEN -->
+    <section id="prinzipien" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Prinzipien</h2>
+          <p>Was ZAL’THERA einzigartig macht — und warum es skalieren kann.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="feature glass">
+            <h3>Explainability als Pflicht</h3>
+            <p>Jede Erlaubnis und jede Blockade hat einen sichtbaren Grund. Kein „weil System so sagt“.</p>
+          </article>
+
+          <article class="feature glass">
+            <h3>Local-first Souveränität</h3>
+            <p>Daten gehören auf dein Gerät. Cloud ist Option, nicht Voraussetzung.</p>
+          </article>
+
+          <article class="feature glass">
+            <h3>Audit-Trail statt Behauptung</h3>
+            <p>Beweisbarkeit: Ereignisse, Entscheidungen, Zeitfenster. Exportierbar. Nachvollziehbar.</p>
+          </article>
+
+          <article class="feature glass">
+            <h3>Keine Autonomie</h3>
+            <p>Keine selbstentscheidende KI. Nur kontrollierte Ausführung unter Governance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOWCASE -->
+    <section id="showcase" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Showcase</h2>
+          <p>So fühlt sich ZAL’THERA an: ruhig, professionell, präzise.</p>
+        </div>
+
+        <div class="showcase glass">
+          <div class="showcase__left">
+            <div class="showcase__title">ZAL’THERA ORIGIN</div>
+            <p class="showcase__text">
+              Ein Einstieg, der nicht überfordert: ein tägliches Ritual, Zustandsräume statt Scores, sichtbare Klarheit statt Gamification.
+            </p>
+            <ul class="bullets">
+              <li>Daily ORIGIN (optional, ohne Druck)</li>
+              <li>Zeit als Kontext (nicht als Countdown)</li>
+              <li>„Was hat sich gezeigt?“ als Fortschritt</li>
+              <li>Runs sammelbar ohne Vergleich</li>
+            </ul>
+            <div class="showcase__actions">
+              <a class="btn btn--primary" href="origin.html">ORIGIN öffnen</a>
+              <a class="btn btn--ghost" href="#kontakt">Kontakt</a>
+            </div>
+          </div>
+
+          <div class="showcase__right">
+            <div class="mock glass" aria-label="Mock Preview">
+              <div class="mock__top">
+                <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+              </div>
+              <div class="mock__body">
+                <div class="mock__logo">ZAL’THERA</div>
+                <div class="mock__line"></div>
+                <div class="mock__card glass">
+                  <div class="mock__cardTitle">Explainability</div>
+                  <div class="mock__cardText">Warum erlaubt / blockiert — sichtbar.</div>
+                </div>
+                <div class="mock__card glass">
+                  <div class="mock__cardTitle">Audit</div>
+                  <div class="mock__cardText">Jede Handlung ist belegt.</div>
+                </div>
+                <div class="mock__card glass">
+                  <div class="mock__cardTitle">Control</div>
+                  <div class="mock__cardText">Policy → Identity → Execute.</div>
+                </div>
+              </div>
+            </div>
+            <div class="micro muted">Mock-Preview (Design-Sprache der Marke).</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Kontakt</h2>
+          <p>Wenn du ZAL’THERA sehen willst (Demo / Lizenz / Partner), melde dich.</p>
+        </div>
+
+        <div class="contact grid grid--2">
+          <div class="card glass">
+            <h3>Für Partner</h3>
+            <p>Industrie / Governance / Compliance: Demo-Pfad mit Explainability & Audit-Beweisen.</p>
+            <div class="contact__row">
+              <span class="muted">E-Mail</span>
+              <span><a class="link" href="mailto:patrick_walker1977@yahoo.com">patrick_walker1977@yahoo.com</a></span>
+            </div>
+          </div>
+
+          <div class="card glass">
+            <h3>Für App Store</h3>
+            <p>ORIGIN ist Einstieg. ZAL’THERA ist Dach. Die Seite bleibt bewusst klar & seriös.</p>
+            <div class="contact__row">
+              <span class="muted">Privacy</span>
+              <span><a class="link" href="privacy.html">Datenschutzerklärung →</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer glass">
+          <div class="footer__left">
+            <div class="footer__brand">ZAL’THERA</div>
+            <div class="micro muted">Governance-basierte Systeme. Erklärbar. Kontrollierbar. Menschlich.</div>
+          </div>
+          <div class="footer__right">
+            <a class="link" href="privacy.html">Datenschutz</a>
+            <span class="sep">•</span>
+            <a class="link" href="impressum.html">Impressum</a>
+            <span class="sep">•</span>
+            <span class="micro muted">© <span id="year"></span> Patrick Walker</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
+
