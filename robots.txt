@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://billionaire1977.github.io/Zalthera/sitemap.xml
