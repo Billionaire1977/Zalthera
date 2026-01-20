@@ -1,5 +1,5 @@
 (() => {
-  // Year (supports multiple #year spans)
+  // Year
   const years = document.querySelectorAll("#year");
   const y = String(new Date().getFullYear());
   years.forEach((el) => (el.textContent = y));
@@ -35,10 +35,13 @@
   if (sections.length) {
     const setActive = () => {
       let best = null;
+
       for (const s of sections) {
         const r = s.el.getBoundingClientRect();
-        if (r.top <= 120) best = s;
+        const top = r.top;
+        if (top <= 120) best = s;
       }
+
       navLinks.forEach((a) => a.classList.remove("is-active"));
       if (best) best.a.classList.add("is-active");
     };
@@ -69,5 +72,96 @@
       window.scrollTo({ top, behavior: "smooth" });
     });
   }
+
+  // -------------------------------------------------------
+  // Mobile Drawer Nav
+  // -------------------------------------------------------
+  const root = document.documentElement;
+  const toggle = document.querySelector('[data-nav-toggle="true"]');
+  const overlay = document.querySelector('[data-drawer-overlay="true"]');
+  const drawer = document.querySelector('[data-drawer="true"]');
+  const closeBtn = document.querySelector('[data-drawer-close="true"]');
+
+  if (!toggle || !overlay || !drawer) return;
+
+  const focusableSelector =
+    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+
+  let lastFocus = null;
+
+  const setAria = (open) => {
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    drawer.setAttribute("aria-hidden", open ? "false" : "true");
+  };
+
+  const openNav = () => {
+    if (root.classList.contains("nav-open")) return;
+    lastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    root.classList.add("nav-open");
+    setAria(true);
+
+    // focus first link
+    const first = drawer.querySelector(focusableSelector);
+    if (first instanceof HTMLElement) first.focus();
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeNav = () => {
+    if (!root.classList.contains("nav-open")) return;
+    root.classList.remove("nav-open");
+    setAria(false);
+    document.body.style.overflow = "";
+
+    if (lastFocus && lastFocus instanceof HTMLElement) lastFocus.focus();
+  };
+
+  toggle.addEventListener("click", () => {
+    if (root.classList.contains("nav-open")) closeNav();
+    else openNav();
+  });
+
+  if (closeBtn) closeBtn.addEventListener("click", closeNav);
+  overlay.addEventListener("click", closeNav);
+
+  // close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeNav();
+
+    // focus trap while open
+    if (e.key === "Tab" && root.classList.contains("nav-open")) {
+      const focusables = Array.from(drawer.querySelectorAll(focusableSelector))
+        .filter((el) => el instanceof HTMLElement);
+
+      if (!focusables.length) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement;
+
+      if (e.shiftKey) {
+        if (active === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (active === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+  });
+
+  // close on drawer link click (keeps it snappy on mobile)
+  drawer.addEventListener("click", (e) => {
+    const t = e.target;
+    if (!(t instanceof Element)) return;
+    const a = t.closest("a");
+    if (!a) return;
+    closeNav();
+  });
+
+  // init ARIA
+  setAria(false);
 })();
 
