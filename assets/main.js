@@ -24,6 +24,75 @@
     document.documentElement.style.scrollBehavior = "auto";
   }
 
+  // Mobile menu
+  const mobileNav = document.getElementById("mobileNav");
+  const openBtn = document.querySelector('.navbtn[aria-controls="mobileNav"]');
+  const closeBtn = document.querySelector(".navbtn--close");
+
+  const setExpanded = (expanded) => {
+    if (openBtn) openBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
+    if (closeBtn) closeBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
+  };
+
+  const openMenu = () => {
+    if (!mobileNav) return;
+    mobileNav.hidden = false;
+    mobileNav.classList.add("is-open");
+    document.body.classList.add("nav-open");
+    setExpanded(true);
+
+    const focusTarget = mobileNav.querySelector(".mobileNav__link") || closeBtn;
+    if (focusTarget && focusTarget.focus) focusTarget.focus();
+  };
+
+  const closeMenu = () => {
+    if (!mobileNav) return;
+    mobileNav.classList.remove("is-open");
+    document.body.classList.remove("nav-open");
+    setExpanded(false);
+
+    window.setTimeout(() => {
+      if (mobileNav) mobileNav.hidden = true;
+    }, 120);
+
+    if (openBtn && openBtn.focus) openBtn.focus();
+  };
+
+  if (openBtn && mobileNav) {
+    openBtn.addEventListener("click", () => {
+      const expanded = openBtn.getAttribute("aria-expanded") === "true";
+      if (expanded) closeMenu();
+      else openMenu();
+    });
+  }
+
+  if (closeBtn && mobileNav) {
+    closeBtn.addEventListener("click", () => closeMenu());
+  }
+
+  if (mobileNav) {
+    mobileNav.addEventListener("click", (e) => {
+      const t = e.target;
+      if (!(t instanceof Element)) return;
+
+      if (t.classList.contains("mobileNav")) {
+        closeMenu();
+        return;
+      }
+
+      const a = t.closest("a");
+      if (a && a.classList.contains("mobileNav__link")) {
+        closeMenu();
+      }
+    });
+  }
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (!mobileNav || mobileNav.hidden) return;
+    closeMenu();
+  });
+
   // Active nav link highlighting (for pages with in-page anchors)
   const navLinks = Array.from(document.querySelectorAll('.nav__link[href^="#"]'));
   const sections = navLinks
