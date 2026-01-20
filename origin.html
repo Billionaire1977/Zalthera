@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0a0d14" />
 
-  <title>ORIGIN — Daily Klarheit ohne Druck | ZAL’THERA</title>
-  <meta name="description" content="ORIGIN ist der Einstieg in ZAL’THERA: ein ruhiges Daily-Ritual (optional), Zustandsräume statt Scores, Zeit als Kontext, sichtbare Klarheit statt Gamification." />
+  <title>ORIGIN — ZAL’THERA</title>
+  <meta name="description" content="ORIGIN ist der Einstieg in das ZAL’THERA-Universum: Wahrnehmung, Zustand, Erklärung — ruhig, klar, ohne Druck." />
 
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://billionaire1977.github.io/Zalthera/origin.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="ORIGIN — Daily Klarheit ohne Druck" />
-  <meta property="og:description" content="Daily Ritual (optional). Zustandsräume statt Scores. Zeit als Kontext. Sichtbarer Abschnitt „Was hat sich gezeigt?“." />
+  <meta property="og:title" content="ORIGIN — ZAL’THERA" />
+  <meta property="og:description" content="Ein Einstieg, der Klarheit erzeugt — ohne Druck." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/og-cover.png" />
   <meta property="og:url" content="https://billionaire1977.github.io/Zalthera/origin.html" />
@@ -21,8 +21,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ORIGIN — Daily Klarheit ohne Druck" />
-  <meta name="twitter:description" content="Ruhiges Daily-Ritual (optional). Keine Scores. Keine Gamification. Nur Klarheit." />
+  <meta name="twitter:title" content="ORIGIN — ZAL’THERA" />
+  <meta name="twitter:description" content="Ein Einstieg, der Klarheit erzeugt — ohne Druck." />
   <meta name="twitter:image" content="assets/og-cover.png" />
 
   <!-- Icons -->
@@ -32,27 +32,14 @@
   <!-- Styles -->
   <link rel="stylesheet" href="assets/style.css" />
 
-  <!-- JSON-LD: Organization + WebPage -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"ZAL’THERA",
-    "url":"https://billionaire1977.github.io/Zalthera/",
-    "email":"patrick_walker1977@yahoo.com",
-    "founder":{
-      "@type":"Person",
-      "name":"Patrick Walker"
-    }
-  }
-  </script>
+  <!-- JSON-LD: WebPage -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"WebPage",
     "name":"ORIGIN — ZAL’THERA",
     "url":"https://billionaire1977.github.io/Zalthera/origin.html",
-    "description":"ORIGIN ist der Einstieg in ZAL’THERA: Daily-Ritual (optional), Zustandsräume statt Scores, Zeit als Kontext, sichtbare Klarheit statt Gamification.",
+    "inLanguage":"de",
     "isPartOf":{
       "@type":"WebSite",
       "name":"ZAL’THERA",
@@ -72,229 +59,124 @@
         <span class="brand__name">ZAL’THERA</span>
       </a>
 
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="nav__link" href="index.html#systeme">Systeme</a>
+        <a class="nav__link" href="index.html#prinzipien">Prinzipien</a>
+        <a class="nav__link" href="index.html#showcase">Showcase</a>
+        <a class="nav__link" href="index.html#kontakt">Kontakt</a>
+      </nav>
+
       <div class="topbar__actions">
         <a class="btn btn--ghost" href="index.html">Zurück</a>
-        <a class="btn btn--primary" href="#kontakt">Kontakt</a>
+        <a class="btn btn--primary" href="privacy.html">Datenschutz</a>
+
+        <!-- Mobile: Hamburger -->
+        <button
+          class="btn btn--ghost nav-toggle"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-controls="drawer"
+          aria-expanded="false"
+          data-nav-toggle="true"
+        >
+          <span class="bars" aria-hidden="true">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
 
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="bg-grid" aria-hidden="true"></div>
-      <div class="bg-glow" aria-hidden="true"></div>
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" data-drawer-overlay="true" aria-hidden="true"></div>
 
-      <div class="container hero__inner">
-        <div class="hero__copy">
-          <div class="kicker">
-            <span class="pill">ORIGIN</span>
-            <span class="pill pill--soft">Daily (optional)</span>
-            <span class="pill pill--soft">Kein Druck</span>
-          </div>
+  <aside
+    id="drawer"
+    class="drawer"
+    data-drawer="true"
+    aria-label="Mobile Navigation"
+    aria-hidden="true"
+  >
+    <div class="drawer__head">
+      <div class="drawer__title">ZAL’THERA</div>
+      <button
+        class="btn btn--ghost drawer__close"
+        type="button"
+        aria-label="Menü schließen"
+        data-drawer-close="true"
+      >
+        ✕
+      </button>
+    </div>
 
-          <h1 class="hero__title">
-            ORIGIN ist kein Spiel —
-            <span class="accent">sondern ein täglicher Ursprung.</span>
-          </h1>
+    <nav class="drawer__nav" aria-label="Navigation">
+      <a class="drawer__link" href="index.html">Start</a>
+      <a class="drawer__link" href="origin.html">ORIGIN</a>
+      <a class="drawer__link" href="aurelion.html">Aurelion</a>
+      <a class="drawer__link" href="governance.html">Governance Core</a>
+      <a class="drawer__link" href="privacy.html">Datenschutz</a>
+      <a class="drawer__link" href="impressum.html">Impressum</a>
+    </nav>
 
-          <p class="hero__subtitle">
-            ORIGIN ist der Einstieg in ZAL’THERA: ein ruhiger Durchlauf (optional),
-            der <strong>Klarheit sichtbar macht</strong> — ohne Score, ohne Streak-Druck, ohne Vergleich.
-          </p>
+    <div class="drawer__meta">
+      <div class="micro muted">Daily ORIGIN. Zeit als Kontext. Zustandsräume.</div>
+    </div>
+  </aside>
 
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="#prinzipien">Wie ORIGIN funktioniert</a>
-            <a class="btn btn--ghost" href="aurelion.html">Aurelion verstehen</a>
-          </div>
+  <main id="main" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>ORIGIN</h2>
+        <p>Ein Einstieg, der Klarheit erzeugt — ohne Druck.</p>
+      </div>
 
-          <div class="hero__metrics">
-            <div class="metric">
-              <div class="metric__value">Ritual</div>
-              <div class="metric__label">1 Durchlauf / Tag (optional)</div>
-            </div>
-            <div class="metric">
-              <div class="metric__value">Kontext</div>
-              <div class="metric__label">Zeit beeinflusst Erklärung</div>
-            </div>
-            <div class="metric">
-              <div class="metric__value">Fortschritt</div>
-              <div class="metric__label">ohne Ranking</div>
-            </div>
-          </div>
+      <div class="card glass">
+        <h3>Wofür ORIGIN steht</h3>
+        <p class="muted">
+          ORIGIN ist bewusst ruhig: ein tägliches Ritual (optional), Zustandsräume statt Scores,
+          und ein sichtbarer Abschnitt „Was hat sich gezeigt?“ als Fortschritt.
+        </p>
+      </div>
+
+      <div class="grid grid--2" style="margin-top:14px;">
+        <div class="feature glass">
+          <h3>Daily ORIGIN</h3>
+          <p class="muted">Ein Durchlauf pro Tag — ohne Zwang. Kein Streak-Druck.</p>
         </div>
-
-        <div class="hero__panel glass">
-          <div class="panel__header">
-            <div class="panel__title">ORIGIN Output</div>
-            <div class="panel__tag">Beispiel</div>
-          </div>
-
-          <div class="stack">
-            <div class="stack__row">
-              <div class="muted">Zustandsraum</div>
-              <div><strong>Klarheit · Verantwortung · Ruhe</strong></div>
-            </div>
-            <div class="stack__row">
-              <div class="muted">Was hat sich gezeigt?</div>
-              <div>
-                3–5 neutrale Sätze, die sichtbar machen, was heute „da“ ist — ohne Bewertung.
-              </div>
-            </div>
-            <div class="stack__row">
-              <div class="muted">Run</div>
-              <div>Gespeichert als Verlauf — ohne Vergleich, ohne Score.</div>
-            </div>
-          </div>
-
-          <div class="panel__footer">
-            <span class="micro">ORIGIN bleibt bewusst ruhig: Klarheit statt Druck.</span>
-          </div>
+        <div class="feature glass">
+          <h3>Zeit als Kontext</h3>
+          <p class="muted">Tageszeit beeinflusst Explainability — kein Countdown.</p>
+        </div>
+        <div class="feature glass">
+          <h3>Was hat sich gezeigt?</h3>
+          <p class="muted">3–5 neutrale Sätze als sichtbarer Fortschritt.</p>
+        </div>
+        <div class="feature glass">
+          <h3>Runs ohne Vergleich</h3>
+          <p class="muted">Sammlung ohne Ranking, ohne Bewertung.</p>
         </div>
       </div>
-    </section>
 
-    <!-- PRINZIPIEN -->
-    <section id="prinzipien" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2>Wie ORIGIN funktioniert</h2>
-          <p>Vier Prinzipien, die ORIGIN von Gamification trennen.</p>
+      <div class="section__note glass" style="margin-top:14px;">
+        Wenn du willst, bauen wir hier als Nächstes echte Screenshots/Mockups ein (iPhone 13 + App Store-ready).
+      </div>
+
+      <div class="footer glass">
+        <div class="footer__left">
+          <div class="footer__brand">ZAL’THERA</div>
+          <div class="micro muted">Governance-basierte Systeme. Erklärbar. Kontrollierbar. Menschlich.</div>
         </div>
-
-        <div class="grid grid--2">
-          <article class="feature glass">
-            <h3>1) Daily ORIGIN (optional)</h3>
-            <p>Ein Durchlauf pro Tag ist möglich — aber nie Pflicht. Kein Streak-Druck.</p>
-          </article>
-
-          <article class="feature glass">
-            <h3>2) Zeit als Kontext</h3>
-            <p>Tageszeit beeinflusst Explainability (Kontext) — kein Countdown, kein Stress.</p>
-          </article>
-
-          <article class="feature glass">
-            <h3>3) „Was hat sich gezeigt?“</h3>
-            <p>3–5 neutrale Sätze als sichtbarer Fortschritt. Kein Urteil. Nur Klarheit.</p>
-          </article>
-
-          <article class="feature glass">
-            <h3>4) Runs ohne Vergleich</h3>
-            <p>Verlauf sammelbar — ohne Ranking, ohne externe Bewertung.</p>
-          </article>
-        </div>
-
-        <div class="section__note glass">
-          ORIGIN ist die Einstiegsebene: ruhig, seriös, nachvollziehbar. Alles Weitere bleibt unter Governance.
+        <div class="footer__right">
+          <a class="link" href="privacy.html">Datenschutz</a>
+          <span class="sep">•</span>
+          <a class="link" href="impressum.html">Impressum</a>
+          <span class="sep">•</span>
+          <span class="micro muted">© <span id="year"></span> Patrick Walker</span>
         </div>
       </div>
-    </section>
-
-    <!-- SHOWCASE -->
-    <section class="section" aria-label="ORIGIN Showcase">
-      <div class="container">
-        <div class="section__head">
-          <h2>Warum das wirkt</h2>
-          <p>Weil ORIGIN nicht „pushen“ muss. Es zeigt.</p>
-        </div>
-
-        <div class="showcase glass">
-          <div class="showcase__left">
-            <div class="showcase__title">Klarheit statt Motivationstricks</div>
-            <p class="showcase__text">
-              ORIGIN baut Rückkehr-Motivation nicht über Belohnungsmechaniken,
-              sondern über Sinn: ein kurzer, sauberer Blick auf den Zustand.
-            </p>
-            <ul class="bullets">
-              <li>Keine Scores, keine Streak-Strafen</li>
-              <li>Neutraler Fortschritt („Was hat sich gezeigt?“)</li>
-              <li>Runs = Biografie, nicht Wettbewerb</li>
-              <li>Ruhig, seriös, wiederholbar</li>
-            </ul>
-
-            <div class="showcase__actions">
-              <a class="btn btn--primary" href="index.html#systeme">Zur System-Übersicht</a>
-              <a class="btn btn--ghost" href="governance.html">Governance Core</a>
-            </div>
-          </div>
-
-          <div class="showcase__right">
-            <div class="mock glass" aria-label="Mock Preview ORIGIN">
-              <div class="mock__top">
-                <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
-              </div>
-              <div class="mock__body">
-                <div class="mock__logo">ORIGIN</div>
-                <div class="mock__line"></div>
-
-                <div class="mock__card glass">
-                  <div class="mock__cardTitle">Zustandsraum</div>
-                  <div class="mock__cardText">Klarheit · Verantwortung · Ruhe</div>
-                </div>
-
-                <div class="mock__card glass">
-                  <div class="mock__cardTitle">Was hat sich gezeigt?</div>
-                  <div class="mock__cardText">3–5 neutrale Sätze als sichtbarer Fortschritt.</div>
-                </div>
-
-                <div class="mock__card glass">
-                  <div class="mock__cardTitle">Run</div>
-                  <div class="mock__cardText">Gespeichert — ohne Vergleich, ohne Ranking.</div>
-                </div>
-              </div>
-            </div>
-            <div class="micro muted">Mock-Preview (Design-Sprache der Marke).</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section id="kontakt" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2>Kontakt</h2>
-          <p>Wenn du ORIGIN (und ZAL’THERA) als Demo sehen willst, schreib mir.</p>
-        </div>
-
-        <div class="grid grid--2">
-          <div class="card glass">
-            <h3>Demo / Partner</h3>
-            <p>ORIGIN als Einstieg — seriös, erklärbar, ohne Druck.</p>
-            <div class="contact__row">
-              <span class="muted">E-Mail</span>
-              <span><a class="link" href="mailto:patrick_walker1977@yahoo.com">patrick_walker1977@yahoo.com</a></span>
-            </div>
-          </div>
-
-          <div class="card glass">
-            <h3>Rechtliches</h3>
-            <p>Transparenz & Seriosität.</p>
-            <div class="contact__row">
-              <span class="muted">Seiten</span>
-              <span>
-                <a class="link" href="privacy.html">Datenschutz</a> ·
-                <a class="link" href="impressum.html">Impressum</a>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer glass">
-          <div class="footer__left">
-            <div class="footer__brand">ZAL’THERA</div>
-            <div class="micro muted">ORIGIN ist Einstieg. Governance ist Standard.</div>
-          </div>
-          <div class="footer__right">
-            <a class="link" href="privacy.html">Datenschutz</a>
-            <span class="sep">•</span>
-            <a class="link" href="impressum.html">Impressum</a>
-            <span class="sep">•</span>
-            <span class="micro muted">© <span id="year"></span> Patrick Walker</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
   <script src="assets/main.js"></script>
