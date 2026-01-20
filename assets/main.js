@@ -1,6 +1,6 @@
 // /assets/js/main.js
 (() => {
-  // Year
+  // Year (supports multiple #year occurrences)
   const years = document.querySelectorAll("#year");
   const y = String(new Date().getFullYear());
   years.forEach((el) => (el.textContent = y));
@@ -15,9 +15,10 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  // Reduced motion respect (disables smooth scroll if user prefers reduced motion)
+  // Reduced motion respect
   const prefersReducedMotion =
-    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (prefersReducedMotion) {
     document.documentElement.style.scrollBehavior = "auto";
