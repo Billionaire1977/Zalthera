@@ -1,26 +1,43 @@
+<!-- /governance.html -->
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0a0d14" />
+
   <title>Governance Core — ZAL’THERA</title>
   <meta name="description" content="Policy → Identity → Audit → Execute. Governance Core als Standard für kontrollierbare Systeme." />
+
+  <link rel="canonical" href="https://DEINE-DOMAIN.TLD/governance.html" />
+
+  <meta property="og:title" content="Governance Core — ZAL’THERA" />
+  <meta property="og:description" content="Policy → Identity → Audit → Execute. Kein Bypass." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://DEINE-DOMAIN.TLD/governance.html" />
+
   <link rel="icon" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
   <header class="topbar">
     <div class="container topbar__inner">
-      <a class="brand" href="index.html"><span class="brand__mark">△</span><span class="brand__name">ZAL’THERA</span></a>
+      <a class="brand" href="index.html" aria-label="ZAL’THERA Startseite">
+        <span class="brand__mark" aria-hidden="true">△</span>
+        <span class="brand__name">ZAL’THERA</span>
+      </a>
+
       <div class="topbar__actions">
         <a class="btn btn--ghost" href="index.html">Zurück</a>
-        <a class="btn btn--primary" href="privacy.html">Privacy</a>
+        <a class="btn btn--primary" href="privacy.html">Datenschutz</a>
       </div>
     </div>
   </header>
 
-  <main class="section">
+  <main id="main" class="section section--alt">
     <div class="container">
       <div class="section__head">
         <h2>Governance Core</h2>
@@ -29,10 +46,12 @@
 
       <div class="card glass">
         <h3>Die Kette</h3>
-        <p><strong>Policy → Identity → Audit → Execute</strong>. Dazu: SafeMode, Timeboxing, Target-Scoping, Explainability.</p>
+        <p class="muted">
+          <strong>Policy → Identity → Audit → Execute</strong>. Dazu: SafeMode, Timeboxing, Target-Scoping, Explainability.
+        </p>
       </div>
 
-      <div class="grid grid--2" style="margin-top:14px;">
+      <div class="grid grid--2 section__gap">
         <div class="feature glass">
           <h3>Policy</h3>
           <p>Allow/Deny + Zeitfenster + Profile. Kein Bypass.</p>
@@ -51,8 +70,22 @@
         </div>
       </div>
 
-      <div class="section__note glass" style="margin-top:14px;">
+      <div class="section__note glass section__gap">
         Nächster Schritt: „Warum erlaubt/blockiert?“ (Explainability-Center) als public-readable Präsentationsseite.
+      </div>
+
+      <div class="footer glass">
+        <div class="footer__left">
+          <div class="footer__brand">ZAL’THERA</div>
+          <div class="micro muted">Governance ist die Sprache. Audit ist der Beweis.</div>
+        </div>
+        <div class="footer__right">
+          <a class="link" href="privacy.html">Datenschutz</a>
+          <span class="sep">•</span>
+          <a class="link" href="impressum.html">Impressum</a>
+          <span class="sep">•</span>
+          <span class="micro muted">© <span id="year"></span> Patrick Walker</span>
+        </div>
       </div>
     </div>
   </main>
@@ -60,5 +93,4 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-
 
