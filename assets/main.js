@@ -1,6 +1,6 @@
 // /assets/main.js
 (() => {
-  // Year (keeps your current markup: multiple elements may share id="year")
+  // Year
   const years = document.querySelectorAll("#year");
   const y = String(new Date().getFullYear());
   years.forEach((el) => (el.textContent = y));
@@ -36,10 +36,12 @@
   if (sections.length) {
     const setActive = () => {
       let best = null;
+
       for (const s of sections) {
         const r = s.el.getBoundingClientRect();
         if (r.top <= 120) best = s;
       }
+
       navLinks.forEach((a) => a.classList.remove("is-active"));
       if (best) best.a.classList.add("is-active");
     };
@@ -128,4 +130,3 @@
     });
   }
 })();
-
