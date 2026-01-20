@@ -1,18 +1,35 @@
+<!-- /aurelion.html -->
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0a0d14" />
+
   <title>Aurelion — ZAL’THERA</title>
   <meta name="description" content="Aurelion ist die Reporter-Instanz: erklärt WHY, zeigt Status, keine Ausführung." />
+
+  <link rel="canonical" href="https://DEINE-DOMAIN.TLD/aurelion.html" />
+
+  <meta property="og:title" content="Aurelion — ZAL’THERA" />
+  <meta property="og:description" content="Reporter-Instanz. Keine Entscheidungen. Keine Ausführung. Nur Klarheit." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://DEINE-DOMAIN.TLD/aurelion.html" />
+
   <link rel="icon" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
   <header class="topbar">
     <div class="container topbar__inner">
-      <a class="brand" href="index.html"><span class="brand__mark">△</span><span class="brand__name">ZAL’THERA</span></a>
+      <a class="brand" href="index.html" aria-label="ZAL’THERA Startseite">
+        <span class="brand__mark" aria-hidden="true">△</span>
+        <span class="brand__name">ZAL’THERA</span>
+      </a>
+
       <div class="topbar__actions">
         <a class="btn btn--ghost" href="index.html">Zurück</a>
         <a class="btn btn--primary" href="#kontakt">Kontakt</a>
@@ -20,7 +37,7 @@
     </div>
   </header>
 
-  <main class="section">
+  <main id="main" class="section section--alt">
     <div class="container">
       <div class="section__head">
         <h2>Aurelion</h2>
@@ -30,19 +47,25 @@
       <div class="grid grid--2">
         <div class="card glass">
           <h3>Rolle</h3>
-          <p>Aurelion zeigt Status, Grenzen, Gründe. Er ist das Interface für Explainability — nicht für Kontrolle.</p>
+          <p class="muted">
+            Aurelion zeigt Status, Grenzen, Gründe. Er ist das Interface für Explainability — nicht für Kontrolle.
+          </p>
         </div>
+
         <div class="card glass">
           <h3>Warum das wichtig ist</h3>
-          <p>Weil Systeme erst skalieren, wenn Menschen verstehen, was passiert — und warum.</p>
+          <p class="muted">
+            Systeme skalieren erst, wenn Menschen verstehen, was passiert — und warum.
+          </p>
         </div>
       </div>
 
-      <section id="kontakt" class="section" style="padding-bottom:0;">
+      <section id="kontakt" class="section__gap">
         <div class="section__head">
           <h2>Kontakt</h2>
           <p>Demo / Erklärung / Präsentation.</p>
         </div>
+
         <div class="card glass">
           <div class="contact__row">
             <span class="muted">E-Mail</span>
@@ -50,11 +73,24 @@
           </div>
         </div>
       </section>
+
+      <div class="footer glass">
+        <div class="footer__left">
+          <div class="footer__brand">ZAL’THERA</div>
+          <div class="micro muted">Aurelion ist Reporter, nicht Executor.</div>
+        </div>
+        <div class="footer__right">
+          <a class="link" href="privacy.html">Datenschutz</a>
+          <span class="sep">•</span>
+          <a class="link" href="impressum.html">Impressum</a>
+          <span class="sep">•</span>
+          <span class="micro muted">© <span id="year"></span> Patrick Walker</span>
+        </div>
+      </div>
     </div>
   </main>
 
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-
 
