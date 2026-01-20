@@ -1,10 +1,15 @@
+// /assets/js/main.js
 (() => {
-  // Year
+  // ----------------------------
+  // Year (supports multiple #year occurrences)
+  // ----------------------------
   const years = document.querySelectorAll("#year");
   const y = String(new Date().getFullYear());
   years.forEach((el) => (el.textContent = y));
 
+  // ----------------------------
   // Topbar border polish on scroll
+  // ----------------------------
   const topbar = document.querySelector(".topbar");
   const onScroll = () => {
     if (!topbar) return;
@@ -14,7 +19,9 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  // ----------------------------
   // Reduced motion respect
+  // ----------------------------
   const prefersReducedMotion =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -22,7 +29,9 @@
     document.documentElement.style.scrollBehavior = "auto";
   }
 
-  // Active nav link highlighting (for pages with in-page anchors)
+  // ----------------------------
+  // Active nav link highlighting (only for in-page anchors on index)
+  // ----------------------------
   const navLinks = Array.from(document.querySelectorAll('.nav__link[href^="#"]'));
   const sections = navLinks
     .map((a) => {
@@ -51,7 +60,9 @@
     setActive();
   }
 
+  // ----------------------------
   // Smooth anchor scroll (only if not reduced motion)
+  // ----------------------------
   if (!prefersReducedMotion) {
     document.addEventListener("click", (e) => {
       const t = e.target;
@@ -73,95 +84,72 @@
     });
   }
 
-  // -------------------------------------------------------
-  // Mobile Drawer Nav
-  // -------------------------------------------------------
-  const root = document.documentElement;
-  const toggle = document.querySelector('[data-nav-toggle="true"]');
-  const overlay = document.querySelector('[data-drawer-overlay="true"]');
+  // ----------------------------
+  // Mobile Drawer Navigation
+  // ----------------------------
   const drawer = document.querySelector('[data-drawer="true"]');
+  const overlay = document.querySelector('[data-drawer-overlay="true"]');
+  const toggleBtn = document.querySelector('[data-nav-toggle="true"]');
   const closeBtn = document.querySelector('[data-drawer-close="true"]');
 
-  if (!toggle || !overlay || !drawer) return;
+  if (drawer && overlay && toggleBtn) {
+    const setOpen = (open) => {
+      drawer.classList.toggle("is-open", open);
+      overlay.classList.toggle("is-open", open);
 
-  const focusableSelector =
-    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
+      overlay.setAttribute("aria-hidden", open ? "false" : "true");
+      toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
 
-  let lastFocus = null;
+      // lock scroll when open
+      document.documentElement.classList.toggle("no-scroll", open);
+      document.body.classList.toggle("no-scroll", open);
 
-  const setAria = (open) => {
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    drawer.setAttribute("aria-hidden", open ? "false" : "true");
-  };
-
-  const openNav = () => {
-    if (root.classList.contains("nav-open")) return;
-    lastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-    root.classList.add("nav-open");
-    setAria(true);
-
-    // focus first link
-    const first = drawer.querySelector(focusableSelector);
-    if (first instanceof HTMLElement) first.focus();
-    document.body.style.overflow = "hidden";
-  };
-
-  const closeNav = () => {
-    if (!root.classList.contains("nav-open")) return;
-    root.classList.remove("nav-open");
-    setAria(false);
-    document.body.style.overflow = "";
-
-    if (lastFocus && lastFocus instanceof HTMLElement) lastFocus.focus();
-  };
-
-  toggle.addEventListener("click", () => {
-    if (root.classList.contains("nav-open")) closeNav();
-    else openNav();
-  });
-
-  if (closeBtn) closeBtn.addEventListener("click", closeNav);
-  overlay.addEventListener("click", closeNav);
-
-  // close on ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeNav();
-
-    // focus trap while open
-    if (e.key === "Tab" && root.classList.contains("nav-open")) {
-      const focusables = Array.from(drawer.querySelectorAll(focusableSelector))
-        .filter((el) => el instanceof HTMLElement);
-
-      if (!focusables.length) return;
-
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
-      const active = document.activeElement;
-
-      if (e.shiftKey) {
-        if (active === first) {
-          e.preventDefault();
-          last.focus();
-        }
+      // focus handling
+      if (open) {
+        // focus first link for accessibility
+        const firstLink = drawer.querySelector("a, button");
+        if (firstLink && firstLink instanceof HTMLElement) firstLink.focus();
       } else {
-        if (active === last) {
-          e.preventDefault();
-          first.focus();
-        }
+        if (toggleBtn instanceof HTMLElement) toggleBtn.focus();
       }
-    }
-  });
+    };
 
-  // close on drawer link click (keeps it snappy on mobile)
-  drawer.addEventListener("click", (e) => {
-    const t = e.target;
-    if (!(t instanceof Element)) return;
-    const a = t.closest("a");
-    if (!a) return;
-    closeNav();
-  });
+    const openDrawer = () => setOpen(true);
+    const closeDrawer = () => setOpen(false);
 
-  // init ARIA
-  setAria(false);
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = drawer.classList.contains("is-open");
+      setOpen(!isOpen);
+    });
+
+    if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
+    overlay.addEventListener("click", closeDrawer);
+
+    // close on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && drawer.classList.contains("is-open")) closeDrawer();
+    });
+
+    // close drawer when clicking any drawer link
+    drawer.addEventListener("click", (e) => {
+      const t = e.target;
+      if (!(t instanceof Element)) return;
+      const link = t.closest("a");
+      if (!link) return;
+      closeDrawer();
+    });
+
+    // safety: close if resized to desktop
+    window.addEventListener(
+      "resize",
+      () => {
+        if (window.innerWidth > 980 && drawer.classList.contains("is-open")) {
+          closeDrawer();
+        }
+      },
+      { passive: true }
+    );
+  }
 })();
 
