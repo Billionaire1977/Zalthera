@@ -1,6 +1,5 @@
-// /assets/js/main.js
 (() => {
-  // Year (supports multiple occurrences)
+  // Year (supports multiple #year spans)
   const years = document.querySelectorAll("#year");
   const y = String(new Date().getFullYear());
   years.forEach((el) => (el.textContent = y));
@@ -18,7 +17,10 @@
   // Reduced motion respect
   const prefersReducedMotion =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReducedMotion) document.documentElement.style.scrollBehavior = "auto";
+
+  if (prefersReducedMotion) {
+    document.documentElement.style.scrollBehavior = "auto";
+  }
 
   // Active nav link highlighting (for pages with in-page anchors)
   const navLinks = Array.from(document.querySelectorAll('.nav__link[href^="#"]'));
@@ -40,6 +42,7 @@
       navLinks.forEach((a) => a.classList.remove("is-active"));
       if (best) best.a.classList.add("is-active");
     };
+
     window.addEventListener("scroll", setActive, { passive: true });
     window.addEventListener("resize", setActive, { passive: true });
     setActive();
@@ -64,48 +67,6 @@
       e.preventDefault();
       const top = target.getBoundingClientRect().top + window.scrollY - 84;
       window.scrollTo({ top, behavior: "smooth" });
-    });
-  }
-
-  // Mobile nav drawer
-  const drawer = document.getElementById("mobileNav");
-  const toggle = document.querySelector(".nav-toggle");
-  if (drawer && toggle) {
-    const closeButtons = Array.from(drawer.querySelectorAll("[data-nav-close]"));
-    const panel = drawer.querySelector(".navdrawer__panel");
-
-    const setOpen = (open) => {
-      drawer.classList.toggle("is-open", open);
-      drawer.setAttribute("aria-hidden", open ? "false" : "true");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      document.body.style.overflow = open ? "hidden" : "";
-      if (open) {
-        setTimeout(() => {
-          const firstLink = drawer.querySelector(".navdrawer__link");
-          if (firstLink) firstLink.focus();
-        }, 30);
-      } else {
-        toggle.focus();
-      }
-    };
-
-    toggle.addEventListener("click", () => {
-      const isOpen = drawer.classList.contains("is-open");
-      setOpen(!isOpen);
-    });
-
-    closeButtons.forEach((btn) => btn.addEventListener("click", () => setOpen(false)));
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && drawer.classList.contains("is-open")) setOpen(false);
-    });
-
-    // click outside panel closes (safe guard)
-    drawer.addEventListener("click", (e) => {
-      if (!(e.target instanceof Element)) return;
-      if (!panel) return;
-      const clickedInside = panel.contains(e.target);
-      if (!clickedInside) setOpen(false);
     });
   }
 })();
