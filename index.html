@@ -77,9 +77,66 @@
       <div class="topbar__actions">
         <a class="btn btn--ghost" href="origin.html">ORIGIN</a>
         <a class="btn btn--primary" href="#kontakt">Starten</a>
+
+        <!-- Mobile: Hamburger -->
+        <button
+          class="btn btn--ghost nav-toggle"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-controls="drawer"
+          aria-expanded="false"
+          data-nav-toggle="true"
+        >
+          <span class="bars" aria-hidden="true">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" data-drawer-overlay="true" aria-hidden="true"></div>
+
+  <aside
+    id="drawer"
+    class="drawer"
+    data-drawer="true"
+    aria-label="Mobile Navigation"
+    aria-hidden="true"
+  >
+    <div class="drawer__head">
+      <div class="drawer__title">ZAL’THERA</div>
+      <button
+        class="btn btn--ghost drawer__close"
+        type="button"
+        aria-label="Menü schließen"
+        data-drawer-close="true"
+      >
+        ✕
+      </button>
+    </div>
+
+    <nav class="drawer__nav" aria-label="Navigation">
+      <a class="drawer__link" href="origin.html">ORIGIN</a>
+      <a class="drawer__link" href="aurelion.html">Aurelion</a>
+      <a class="drawer__link" href="governance.html">Governance Core</a>
+
+      <a class="drawer__link" href="#systeme">Systeme</a>
+      <a class="drawer__link" href="#prinzipien">Prinzipien</a>
+      <a class="drawer__link" href="#showcase">Showcase</a>
+      <a class="drawer__link" href="#kontakt">Kontakt</a>
+
+      <a class="drawer__link" href="privacy.html">Datenschutz</a>
+      <a class="drawer__link" href="impressum.html">Impressum</a>
+    </nav>
+
+    <div class="drawer__meta">
+      <div class="micro muted">Erklärbar. Kontrollierbar. Menschlich.</div>
+    </div>
+  </aside>
 
   <main id="main">
     <!-- HERO -->
