@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0a0d14" />
 
-  <title>Governance Core — Policy → Identity → Audit → Execute | ZAL’THERA</title>
-  <meta name="description" content="Governance Core ist der ZAL’THERA Standard: Policy → Identity → Audit → Execute. SafeMode, Timeboxing, Target-Scoping und Explainability – kein Bypass." />
+  <title>Governance Core — ZAL’THERA</title>
+  <meta name="description" content="Policy → Identity → Audit → Execute. Governance Core als Standard für kontrollierbare, erklärbare und beweisbare Systeme." />
 
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://billionaire1977.github.io/Zalthera/governance.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Governance Core — Policy → Identity → Audit → Execute" />
-  <meta property="og:description" content="Der Standard für kontrollierbare Systeme: SafeMode, Timeboxing, Target-Scoping, Explainability. Kein Bypass." />
+  <meta property="og:title" content="Governance Core — ZAL’THERA" />
+  <meta property="og:description" content="Policy → Identity → Audit → Execute. Kein Bypass. Audit-Pflicht." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/og-cover.png" />
   <meta property="og:url" content="https://billionaire1977.github.io/Zalthera/governance.html" />
@@ -21,8 +21,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Governance Core — Policy → Identity → Audit → Execute" />
-  <meta name="twitter:description" content="Erklärbar. Kontrollierbar. Beweisbar. Kein Bypass." />
+  <meta name="twitter:title" content="Governance Core — ZAL’THERA" />
+  <meta name="twitter:description" content="Policy → Identity → Audit → Execute. Kein Bypass. Audit-Pflicht." />
   <meta name="twitter:image" content="assets/og-cover.png" />
 
   <!-- Icons -->
@@ -32,37 +32,19 @@
   <!-- Styles -->
   <link rel="stylesheet" href="assets/style.css" />
 
-  <!-- JSON-LD: WebPage + TechArticle (leicht, sauber, GitHub Pages friendly) -->
+  <!-- JSON-LD: WebPage -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"WebPage",
     "name":"Governance Core — ZAL’THERA",
     "url":"https://billionaire1977.github.io/Zalthera/governance.html",
-    "description":"Governance Core ist der ZAL’THERA Standard: Policy → Identity → Audit → Execute. SafeMode, Timeboxing, Target-Scoping und Explainability – kein Bypass.",
+    "inLanguage":"de",
     "isPartOf":{
       "@type":"WebSite",
       "name":"ZAL’THERA",
       "url":"https://billionaire1977.github.io/Zalthera/"
     }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"TechArticle",
-    "headline":"Governance Core — Policy → Identity → Audit → Execute",
-    "description":"Ein Standard, der Handlungen kontrollierbar und beweisbar macht: SafeMode, Timeboxing, Target-Scoping, Explainability.",
-    "author":{
-      "@type":"Person",
-      "name":"Patrick Walker"
-    },
-    "publisher":{
-      "@type":"Organization",
-      "name":"ZAL’THERA",
-      "url":"https://billionaire1977.github.io/Zalthera/"
-    },
-    "mainEntityOfPage":"https://billionaire1977.github.io/Zalthera/governance.html"
   }
   </script>
 </head>
@@ -77,258 +59,193 @@
         <span class="brand__name">ZAL’THERA</span>
       </a>
 
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="nav__link" href="index.html#systeme">Systeme</a>
+        <a class="nav__link" href="index.html#prinzipien">Prinzipien</a>
+        <a class="nav__link" href="index.html#showcase">Showcase</a>
+        <a class="nav__link" href="index.html#kontakt">Kontakt</a>
+      </nav>
+
       <div class="topbar__actions">
         <a class="btn btn--ghost" href="index.html">Zurück</a>
-        <a class="btn btn--primary" href="#kontakt">Kontakt</a>
+        <a class="btn btn--primary" href="aurelion.html">Aurelion</a>
+
+        <!-- Mobile: Hamburger -->
+        <button
+          class="btn btn--ghost nav-toggle"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-controls="drawer"
+          aria-expanded="false"
+          data-nav-toggle="true"
+        >
+          <span class="bars" aria-hidden="true">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
 
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="bg-grid" aria-hidden="true"></div>
-      <div class="bg-glow" aria-hidden="true"></div>
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" data-drawer-overlay="true" aria-hidden="true"></div>
 
-      <div class="container hero__inner">
-        <div class="hero__copy">
-          <div class="kicker">
-            <span class="pill">GOVERNANCE CORE</span>
-            <span class="pill pill--soft">Audit-Pflicht</span>
-            <span class="pill pill--soft">Kein Bypass</span>
-          </div>
+  <aside
+    id="drawer"
+    class="drawer"
+    data-drawer="true"
+    aria-label="Mobile Navigation"
+    aria-hidden="true"
+  >
+    <div class="drawer__head">
+      <div class="drawer__title">ZAL’THERA</div>
+      <button
+        class="btn btn--ghost drawer__close"
+        type="button"
+        aria-label="Menü schließen"
+        data-drawer-close="true"
+      >
+        ✕
+      </button>
+    </div>
 
-          <h1 class="hero__title">
-            Policy → Identity → Audit → Execute —
-            <span class="accent">als Standard.</span>
-          </h1>
+    <nav class="drawer__nav" aria-label="Navigation">
+      <a class="drawer__link" href="index.html">Start</a>
+      <a class="drawer__link" href="origin.html">ORIGIN</a>
+      <a class="drawer__link" href="aurelion.html">Aurelion</a>
+      <a class="drawer__link" href="governance.html">Governance Core</a>
+      <a class="drawer__link" href="privacy.html">Datenschutz</a>
+      <a class="drawer__link" href="impressum.html">Impressum</a>
+    </nav>
 
-          <p class="hero__subtitle">
-            Governance Core macht Handlungen kontrollierbar und beweisbar.
-            Nichts läuft „einfach so“ — jede Ausführung wird geprüft, begründet, protokolliert.
+    <div class="drawer__meta">
+      <div class="micro muted">Policy → Identity → Audit → Execute</div>
+    </div>
+  </aside>
+
+  <main id="main" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Governance Core</h2>
+        <p>Ein Standard, der Handlungen kontrollierbar und beweisbar macht.</p>
+      </div>
+
+      <div class="card glass">
+        <h3>Die Kette</h3>
+        <p class="muted">
+          <strong>Policy → Identity → Audit → Execute</strong>. Dazu: SafeMode, Timeboxing, Target-Scoping, Explainability.
+          <strong>Kein Bypass.</strong>
+        </p>
+      </div>
+
+      <div class="grid grid--2" style="margin-top:14px;">
+        <div class="feature glass">
+          <h3>Policy</h3>
+          <p class="muted">Allow/Deny + Zeitfenster + Profile. Regeln sind lesbar und erklärbar.</p>
+        </div>
+        <div class="feature glass">
+          <h3>Identity</h3>
+          <p class="muted">Owner Unlock / Biometrie / Rollen (später org-fähig). Keine Ausführung ohne Identität.</p>
+        </div>
+        <div class="feature glass">
+          <h3>Audit</h3>
+          <p class="muted">Immutable Event-Trail, exportierbar (PDF/JSON). Jede Entscheidung ist belegt.</p>
+        </div>
+        <div class="feature glass">
+          <h3>Execute</h3>
+          <p class="muted">Nur freigegebene Actions, scoped & timeboxed. Destruktives immer gated.</p>
+        </div>
+      </div>
+
+      <div class="section__head" style="margin-top:18px;">
+        <h2>Was das verhindert</h2>
+        <p>Das ist der Unterschied zu „normalen“ Systemen: Nichttun ist Teil des Designs.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card glass">
+          <h3>Blackbox-Aktionen</h3>
+          <p class="muted">
+            Systeme, die „einfach ausführen“, erzeugen Chaos: keine Gründe, keine Grenzen, kein Beweis.
+            Governance stoppt das.
           </p>
-
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="#kette">Die Kette</a>
-            <a class="btn btn--ghost" href="aurelion.html">Aurelion (WHY)</a>
-          </div>
-
-          <div class="hero__metrics">
-            <div class="metric">
-              <div class="metric__value">Erklärbar</div>
-              <div class="metric__label">WHY sichtbar</div>
-            </div>
-            <div class="metric">
-              <div class="metric__value">Kontrollierbar</div>
-              <div class="metric__label">Gates + SafeMode</div>
-            </div>
-            <div class="metric">
-              <div class="metric__value">Beweisbar</div>
-              <div class="metric__label">Audit-Trail & Export</div>
-            </div>
-          </div>
+          <ul class="bullets">
+            <li>kein stiller Bypass</li>
+            <li>kein unsichtbares „System hat entschieden“</li>
+            <li>kein „passiert halt“ ohne Grund</li>
+          </ul>
         </div>
 
-        <!-- PANEL -->
-        <div class="hero__panel glass">
-          <div class="panel__header">
-            <div class="panel__title">Governance Kette</div>
-            <div class="panel__tag">Core</div>
-          </div>
-
-          <ol class="chain" aria-label="Governance Kette">
-            <li class="chain__item"><span class="dot dot--cyan"></span><span>Intent erkannt</span></li>
-            <li class="chain__item"><span class="dot dot--gold"></span><span>Policy geprüft</span></li>
-            <li class="chain__item"><span class="dot dot--violet"></span><span>Identity bestätigt</span></li>
-            <li class="chain__item"><span class="dot dot--teal"></span><span>Audit geschrieben</span></li>
-            <li class="chain__item"><span class="dot dot--green"></span><span>Execute freigegeben</span></li>
-          </ol>
-
-          <div class="panel__footer">
-            <span class="micro">Governance entscheidet. Actions führen aus. Aurelion erklärt WHY.</span>
-          </div>
+        <div class="card glass">
+          <h3>Unkontrollierte Destruktion</h3>
+          <p class="muted">Destruktive Actions sind standardmäßig die stärksten Gates.</p>
+          <ul class="bullets">
+            <li>Owner Unlock erforderlich</li>
+            <li>SafeMode muss passend sein</li>
+            <li>Audit muss geschrieben werden</li>
+            <li>optional: Human Approval (später)</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- KETTE -->
-    <section id="kette" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2>Die Kette</h2>
-          <p>Eine feste Reihenfolge, die Systeme sauber hält.</p>
-        </div>
+      <div class="section__head" style="margin-top:18px;">
+        <h2>Beispiel-Flow</h2>
+        <p>So wird aus einem Intent eine kontrollierte Handlung.</p>
+      </div>
 
-        <div class="stack glass" style="padding:18px;">
+      <div class="card glass">
+        <div class="stack">
           <div class="stack__row">
-            <div class="muted">1) Policy</div>
-            <div>
-              Allow/Deny-Regeln, Profile, Zeitfenster. Optional: SafeMode erzwingt strengere Defaults.
-            </div>
+            <div class="muted">1) Intent</div>
+            <div><strong>„Start Machine A“</strong> (target: Anlage 1A)</div>
           </div>
           <div class="stack__row">
-            <div class="muted">2) Identity</div>
-            <div>
-              Owner Unlock / Biometrie / Rollen (später org-fähig). Sensible Aktionen sind identity-gated.
-            </div>
+            <div class="muted">2) Policy</div>
+            <div><strong>ALLOW</strong> — nur im Zeitfenster + nur für Rolle „Team Lead“</div>
           </div>
           <div class="stack__row">
-            <div class="muted">3) Audit</div>
-            <div>
-              Immutable Event-Trail: Intent, Decision, Context, Result. Exportierbar (z. B. PDF/JSON).
-            </div>
+            <div class="muted">3) Identity</div>
+            <div>Identität bestätigt (Owner/Role Gate)</div>
           </div>
           <div class="stack__row">
-            <div class="muted">4) Execute</div>
-            <div>
-              Nur freigegebene Actions. Scoped & timeboxed. Keine direkten Bypässe.
-            </div>
+            <div class="muted">4) Audit</div>
+            <div>Event gespeichert: allowed + ruleId + targetId + timestamp</div>
           </div>
+          <div class="stack__row">
+            <div class="muted">5) Execute</div>
+            <div>Action wird ausgeführt — <strong>scoped</strong> auf targetId</div>
+          </div>
+        </div>
+
+        <div class="notice" style="margin-top:12px;">
+          <strong>Wichtig:</strong> Der Audit-Trail ist nicht Deko — er ist der Beweis, dass Governance stattgefunden hat.
         </div>
       </div>
-    </section>
 
-    <!-- CAPABILITIES -->
-    <section class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Core-Fähigkeiten</h2>
-          <p>Das sind die Bausteine, die Governance praktisch machen.</p>
+      <div class="section__note glass" style="margin-top:14px;">
+        Nächster Schritt: „Warum erlaubt/blockiert?“ (Explainability-Center) als public-readable Präsentationsseite.
+      </div>
+
+      <div class="footer glass">
+        <div class="footer__left">
+          <div class="footer__brand">ZAL’THERA</div>
+          <div class="micro muted">Local-first. Keine Autonomie. Auditierbar.</div>
         </div>
-
-        <div class="grid grid--2">
-          <article class="feature glass">
-            <h3>SafeMode</h3>
-            <p>Globaler Sicherheitszustand: strengere Defaults, blockiert riskante Aktionen, erzwingt Bestätigung.</p>
-          </article>
-
-          <article class="feature glass">
-            <h3>Timeboxing</h3>
-            <p>Aktionen werden zeitlich begrenzt freigegeben. Nach Ablauf: automatisch wieder geschlossen.</p>
-          </article>
-
-          <article class="feature glass">
-            <h3>Target-Scoping</h3>
-            <p>Freigaben gelten für ein konkretes Ziel (z. B. Maschine/Line/TargetId). Keine globalen Overrides.</p>
-          </article>
-
-          <article class="feature glass">
-            <h3>Explainability</h3>
-            <p>WHY wird sichtbar: welche Regel, welcher Gate-Status, welche Bedingung hat entschieden?</p>
-          </article>
-        </div>
-
-        <div class="section__note glass">
-          Governance ist nicht „mehr Kontrolle“ — es ist <strong>saubere Verantwortung</strong>: sichtbar, prüfbar, exportierbar.
+        <div class="footer__right">
+          <a class="link" href="privacy.html">Datenschutz</a>
+          <span class="sep">•</span>
+          <a class="link" href="impressum.html">Impressum</a>
+          <span class="sep">•</span>
+          <span class="micro muted">© <span id="year"></span> Patrick Walker</span>
         </div>
       </div>
-    </section>
-
-    <!-- BEISPIEL -->
-    <section class="section section--alt" aria-label="Governance Beispiel">
-      <div class="container">
-        <div class="section__head">
-          <h2>Beispiel-Ablauf</h2>
-          <p>Wie sich eine Handlung in Governance wirklich anfühlt.</p>
-        </div>
-
-        <div class="showcase glass">
-          <div class="showcase__left">
-            <div class="showcase__title">„Aktion ausführen“ (unter Governance)</div>
-            <p class="showcase__text">
-              Das System handelt nicht blind. Es zeigt zuerst: Darf ich? Wer bist du? Was wird protokolliert?
-            </p>
-            <ul class="bullets">
-              <li>Intent erkannt</li>
-              <li>Policy entscheidet (Allow/Deny)</li>
-              <li>Identity ggf. erforderlich (Owner Unlock)</li>
-              <li>Audit wird geschrieben</li>
-              <li>Execute nur wenn freigegeben</li>
-            </ul>
-            <div class="showcase__actions">
-              <a class="btn btn--primary" href="aurelion.html">WHY mit Aurelion</a>
-              <a class="btn btn--ghost" href="origin.html">ORIGIN Einstieg</a>
-            </div>
-          </div>
-
-          <div class="showcase__right">
-            <div class="mock glass" aria-label="Mock Preview Governance">
-              <div class="mock__top">
-                <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
-              </div>
-              <div class="mock__body">
-                <div class="mock__logo">GOVERNANCE</div>
-                <div class="mock__line"></div>
-
-                <div class="mock__card glass">
-                  <div class="mock__cardTitle">Policy</div>
-                  <div class="mock__cardText">Regel erlaubt — Zeitfenster aktiv.</div>
-                </div>
-                <div class="mock__card glass">
-                  <div class="mock__cardTitle">Identity</div>
-                  <div class="mock__cardText">Owner Unlock erforderlich.</div>
-                </div>
-                <div class="mock__card glass">
-                  <div class="mock__cardTitle">Audit</div>
-                  <div class="mock__cardText">Event gespeichert + exportierbar.</div>
-                </div>
-              </div>
-            </div>
-            <div class="micro muted">Mock-Preview (Design-Sprache der Marke).</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section id="kontakt" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Kontakt</h2>
-          <p>Demo / Lizenz / Partner: Governance im echten Ablauf sehen.</p>
-        </div>
-
-        <div class="grid grid--2">
-          <div class="card glass">
-            <h3>Für Partner</h3>
-            <p>Governance + Explainability + Audit: Beweise statt Behauptung.</p>
-            <div class="contact__row">
-              <span class="muted">E-Mail</span>
-              <span><a class="link" href="mailto:patrick_walker1977@yahoo.com">patrick_walker1977@yahoo.com</a></span>
-            </div>
-          </div>
-
-          <div class="card glass">
-            <h3>Rechtliches</h3>
-            <p>Transparenz & Seriosität.</p>
-            <div class="contact__row">
-              <span class="muted">Seiten</span>
-              <span>
-                <a class="link" href="privacy.html">Datenschutz</a> ·
-                <a class="link" href="impressum.html">Impressum</a>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer glass">
-          <div class="footer__left">
-            <div class="footer__brand">ZAL’THERA</div>
-            <div class="micro muted">Policy → Identity → Audit → Execute. Kein Bypass.</div>
-          </div>
-          <div class="footer__right">
-            <a class="link" href="privacy.html">Datenschutz</a>
-            <span class="sep">•</span>
-            <a class="link" href="impressum.html">Impressum</a>
-            <span class="sep">•</span>
-            <span class="micro muted">© <span id="year"></span> Patrick Walker</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
   <script src="assets/main.js"></script>
 </body>
 </html>
+
 
