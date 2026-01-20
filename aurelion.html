@@ -5,17 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0a0d14" />
 
-  <title>Aurelion — ZAL’THERA</title>
-  <meta name="description" content="Aurelion ist die Reporter-Instanz: keine Entscheidungen, keine Ausführung. Zeigt Status, Gründe, Grenzen. Macht Systeme verstehbar." />
+  <title>Aurelion — Reporter-Instanz für Explainability | ZAL’THERA</title>
+  <meta name="description" content="Aurelion ist die Reporter-Instanz von ZAL’THERA: keine Entscheidungen, keine Ausführung. Er zeigt Status, Gründe, Grenzen — WHY wird sichtbar." />
 
-  <meta property="og:title" content="Aurelion — ZAL’THERA" />
-  <meta property="og:description" content="Reporter-Instanz: WHY sichtbar. Grenzen klar. Keine Ausführung." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://billionaire1977.github.io/Zalthera/aurelion.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aurelion — Reporter-Instanz für Explainability" />
+  <meta property="og:description" content="Keine Entscheidungen. Keine Ausführung. Nur Status, Gründe, Grenzen — WHY wird sichtbar." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/og-cover.png" />
+  <meta property="og:image" content="assets/og-cover.png" />
+  <meta property="og:url" content="https://billionaire1977.github.io/Zalthera/aurelion.html" />
+  <meta property="og:site_name" content="ZAL’THERA" />
 
-  <link rel="icon" href="assets/img/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/img/favicon.png" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aurelion — Reporter-Instanz für Explainability" />
+  <meta name="twitter:description" content="WHY sichtbar: Status, Gründe, Grenzen. Keine Ausführung." />
+  <meta name="twitter:image" content="assets/og-cover.png" />
+
+  <!-- Icons -->
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Aurelion — ZAL’THERA",
+    "url":"https://billionaire1977.github.io/Zalthera/aurelion.html",
+    "description":"Aurelion ist die Reporter-Instanz: keine Entscheidungen, keine Ausführung. Er zeigt Status, Gründe und Grenzen.",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"ZAL’THERA",
+      "url":"https://billionaire1977.github.io/Zalthera/"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -30,184 +61,156 @@
 
       <div class="topbar__actions">
         <a class="btn btn--ghost" href="index.html">Zurück</a>
-        <a class="btn btn--primary" href="index.html#kontakt">Kontakt</a>
+        <a class="btn btn--primary" href="#kontakt">Kontakt</a>
       </div>
     </div>
   </header>
 
-  <main id="main" class="section">
-    <div class="container">
-      <div class="section__head">
-        <h2>Aurelion</h2>
-        <p>Reporter-Instanz. Keine Entscheidungen. Keine Ausführung. Nur Klarheit.</p>
-      </div>
+  <main id="main">
+    <section class="hero">
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="bg-glow" aria-hidden="true"></div>
 
-      <!-- Core Role -->
-      <div class="card glass">
-        <h3>Was Aurelion ist</h3>
-        <p class="muted">
-          Aurelion ist die <strong>Explainability-Instanz</strong> im ZAL’THERA-System.
-          Er macht sichtbar, was gerade passiert — und <strong>warum</strong>.
-          Er trifft keine Entscheidungen und führt keine Aktionen aus.
-        </p>
-
-        <div class="notice" style="margin-top:12px;">
-          <strong>Wichtig:</strong> Aurelion ist <em>Read-only</em>. Er kann erklären, aber nicht handeln.
-        </div>
-      </div>
-
-      <!-- What he does / does not -->
-      <div class="section__head" style="margin-top:28px;">
-        <h2>Rolle & Grenzen</h2>
-        <p>Damit Systeme skalieren, müssen Menschen verstehen, was passiert — ohne Angst vor versteckter Autonomie.</p>
-      </div>
-
-      <div class="grid grid--2">
-        <div class="card glass">
-          <h3>Was Aurelion zeigt</h3>
-          <ul class="bullets">
-            <li>Status (was gerade aktiv ist)</li>
-            <li>WHY (warum erlaubt / warum blockiert)</li>
-            <li>Grenzen (was das System nicht darf)</li>
-            <li>Kontext (Zeitfenster, Scope, Target)</li>
-            <li>Beleg (Audit-Event als Nachweis)</li>
-          </ul>
-        </div>
-
-        <div class="card glass">
-          <h3>Was Aurelion nie tut</h3>
-          <ul class="bullets">
-            <li>keine Ausführung (kein Execute)</li>
-            <li>keine Policy-Änderung</li>
-            <li>kein Owner-Override</li>
-            <li>keine versteckte Automatisierung</li>
-            <li>kein Social/Scoring/Gamification</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- How it works -->
-      <div class="section__head" style="margin-top:28px;">
-        <h2>Wie Aurelion erklärt</h2>
-        <p>Er liest die Governance-Kette — und übersetzt sie in Klartext.</p>
-      </div>
-
-      <div class="card glass">
-        <h3>Explainability-Format</h3>
-        <div class="stack" style="margin-top:10px;">
-          <div class="stack__row">
-            <div class="muted">1) Was wurde versucht?</div>
-            <div><strong>Intent</strong> (z. B. „Reset All Memories“ / „Machine Stop“ / „Export PDF“)</div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <div class="kicker">
+            <span class="pill">AURELION</span>
+            <span class="pill pill--soft">Explainability</span>
+            <span class="pill pill--soft">Read-only</span>
           </div>
-          <div class="stack__row">
-            <div class="muted">2) Was war der Scope?</div>
-            <div><strong>Target</strong> (z. B. Anlage 1A / Line 10B / Demo-Core)</div>
-          </div>
-          <div class="stack__row">
-            <div class="muted">3) Warum erlaubt/blockiert?</div>
-            <div><strong>Policy + Timebox + SafeMode + Identity</strong> als Klartext-Begründung</div>
-          </div>
-          <div class="stack__row">
-            <div class="muted">4) Was ist der Beleg?</div>
-            <div><strong>Audit-Event</strong> (immutable) + Export (PDF/JSON)</div>
-          </div>
-        </div>
 
-        <div class="notice" style="margin-top:12px;">
-          <strong>Ergebnis:</strong> Nicht „System sagt nein“, sondern <strong>nachvollziehbarer Grund</strong>.
-        </div>
-      </div>
+          <h1 class="hero__title">
+            Aurelion ist kein Commander —
+            <span class="accent">sondern der Reporter.</span>
+          </h1>
 
-      <!-- Live Example -->
-      <div class="section__head" style="margin-top:28px;">
-        <h2>Beispiel: erlaubt / blockiert</h2>
-        <p>So klingt Aurelion in einer Demo: ruhig, professionell, präzise.</p>
-      </div>
-
-      <div class="grid grid--2">
-        <div class="card glass">
-          <h3>✅ Erlaubt</h3>
-          <p class="muted">
-            <strong>Intent:</strong> „Audit als PDF exportieren“<br />
-            <strong>Target:</strong> Demo-Core<br /><br />
-            <strong>WHY:</strong> Aktion ist erlaubt, weil Export im Profil „Demo“ freigegeben ist,
-            SafeMode aktiv bleibt (nicht-destruktiv), und Identity nicht erforderlich ist.
-            Audit-Event wurde geschrieben.
+          <p class="hero__subtitle">
+            Aurelion macht Systeme verstehbar: Er zeigt <strong>Status</strong>, <strong>Gründe</strong> und <strong>Grenzen</strong>.
+            Wichtig: Aurelion trifft keine Entscheidungen und führt nichts aus.
           </p>
-          <div class="notice" style="margin-top:10px;">
-            <strong>Beleg:</strong> Audit-Export ist nachvollziehbar & reproduzierbar.
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="governance.html">Governance Core</a>
+            <a class="btn btn--ghost" href="origin.html">ORIGIN</a>
+          </div>
+
+          <div class="hero__metrics">
+            <div class="metric">
+              <div class="metric__value">WHY sichtbar</div>
+              <div class="metric__label">Begründung pro Entscheidung</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value">Grenzen klar</div>
+              <div class="metric__label">Policy / Identity / SafeMode</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value">Read-only</div>
+              <div class="metric__label">keine Ausführung</div>
+            </div>
           </div>
         </div>
 
-        <div class="card glass">
-          <h3>⛔ Blockiert</h3>
-          <p class="muted">
-            <strong>Intent:</strong> „Reset All Memories“<br />
-            <strong>Target:</strong> Global<br /><br />
-            <strong>WHY:</strong> Blockiert, weil die Aktion destruktiv ist, Identity (Owner Unlock) fehlt
-            und kein Target-Scoping gesetzt wurde. Zusätzlich verhindert SafeMode globale Resets.
-            Audit-Event wurde geschrieben.
-          </p>
-          <div class="notice" style="margin-top:10px;">
-            <strong>Wichtig:</strong> Keine Ausführung ohne Governance-Kette.
+        <div class="hero__panel glass">
+          <div class="panel__header">
+            <div class="panel__title">Aurelion zeigt</div>
+            <div class="panel__tag">Beispiel</div>
+          </div>
+
+          <ol class="chain" aria-label="Aurelion Explainability Chain">
+            <li class="chain__item"><span class="dot dot--cyan"></span><span>Intent erkannt</span></li>
+            <li class="chain__item"><span class="dot dot--gold"></span><span>Policy: erlaubt/blockiert</span></li>
+            <li class="chain__item"><span class="dot dot--violet"></span><span>Identity: benötigt/ok</span></li>
+            <li class="chain__item"><span class="dot dot--teal"></span><span>Audit: Event geschrieben</span></li>
+            <li class="chain__item"><span class="dot dot--green"></span><span>Execute: nur wenn erlaubt</span></li>
+          </ol>
+
+          <div class="panel__footer">
+            <span class="micro">Aurelion erklärt. Governance entscheidet. Actions führen aus.</span>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Why it matters -->
-      <div class="section__head" style="margin-top:28px;">
-        <h2>Warum Aurelion entscheidend ist</h2>
-        <p>Governance ist nicht nur Technik — es ist Vertrauen als Standard.</p>
-      </div>
-
-      <div class="grid grid--2">
-        <div class="card glass">
-          <h3>Für Partner</h3>
-          <p class="muted">
-            Aurelion macht Compliance, Sicherheit und Haftung <strong>kommunizierbar</strong>.
-            Er ist der Demo-Pfad, den Entscheider verstehen — ohne tief in Code zu gehen.
-          </p>
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Wofür Aurelion existiert</h2>
+          <p>Weil Systeme erst skalieren, wenn Menschen verstehen, was passiert — und warum.</p>
         </div>
-        <div class="card glass">
-          <h3>Für Produkte</h3>
-          <p class="muted">
-            Systeme skalieren nur, wenn Menschen verstehen, was passiert.
-            Explainability ist nicht optional — sie ist die Grundlage für kontrollierbare Systeme.
-          </p>
+
+        <div class="grid grid--2">
+          <article class="feature glass">
+            <h3>Status</h3>
+            <p>Was ist aktiv? Welche Gates greifen? Was ist der aktuelle Zustand?</p>
+          </article>
+          <article class="feature glass">
+            <h3>Gründe</h3>
+            <p>Warum wurde etwas erlaubt oder blockiert? Welche Regel war entscheidend?</p>
+          </article>
+          <article class="feature glass">
+            <h3>Grenzen</h3>
+            <p>Was darf Aurelion nie? Keine Entscheidung, keine Ausführung, kein Bypass.</p>
+          </article>
+          <article class="feature glass">
+            <h3>Beweisbarkeit</h3>
+            <p>Audit-Trail ist sichtbar und exportierbar. Nicht Behauptung, sondern Beleg.</p>
+          </article>
         </div>
-      </div>
 
-      <!-- Contact -->
-      <div class="section__head" style="margin-top:28px;">
-        <h2>Kontakt</h2>
-        <p>Demo / Erklärung / Präsentation.</p>
-      </div>
-
-      <div class="card glass">
-        <div class="contact__row">
-          <span class="muted">E-Mail</span>
-          <span><a class="link" href="mailto:patrick_walker1977@yahoo.com">patrick_walker1977@yahoo.com</a></span>
+        <div class="section__note glass">
+          Aurelion ist dein Presenter: ruhig, seriös, erklärbar. Der ideale Einstieg für Demos.
         </div>
       </div>
+    </section>
 
-      <!-- Footer -->
-      <div class="footer glass" style="margin-top:28px;">
-        <div class="footer__left">
-          <div class="footer__brand">ZAL’THERA</div>
-          <div class="micro muted">Aurelion: Explainability. Read-only. Keine Autonomie.</div>
+    <section id="kontakt" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Kontakt</h2>
+          <p>Wenn du ZAL’THERA sehen willst (Demo / Lizenz / Partner), melde dich.</p>
         </div>
-        <div class="footer__right">
-          <a class="link" href="privacy.html">Datenschutz</a>
-          <span class="sep">•</span>
-          <a class="link" href="impressum.html">Impressum</a>
-          <span class="sep">•</span>
-          <span class="micro muted">© <span id="year"></span> Patrick Walker</span>
+
+        <div class="grid grid--2">
+          <div class="card glass">
+            <h3>Demo / Partner</h3>
+            <p>Explainability first: klar, auditierbar, ohne Blackbox.</p>
+            <div class="contact__row">
+              <span class="muted">E-Mail</span>
+              <span><a class="link" href="mailto:patrick_walker1977@yahoo.com">patrick_walker1977@yahoo.com</a></span>
+            </div>
+          </div>
+
+          <div class="card glass">
+            <h3>Links</h3>
+            <p>Der Kontext zu Aurelion.</p>
+            <div class="contact__row">
+              <span class="muted">Seiten</span>
+              <span>
+                <a class="link" href="governance.html">Governance</a> ·
+                <a class="link" href="origin.html">ORIGIN</a>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer glass">
+          <div class="footer__left">
+            <div class="footer__brand">ZAL’THERA</div>
+            <div class="micro muted">Explainability ist Pflicht. Aurelion macht sie sichtbar.</div>
+          </div>
+          <div class="footer__right">
+            <a class="link" href="privacy.html">Datenschutz</a>
+            <span class="sep">•</span>
+            <a class="link" href="impressum.html">Impressum</a>
+            <span class="sep">•</span>
+            <span class="micro muted">© <span id="year"></span> Patrick Walker</span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/main.js"></script>
 </body>
 </html>
 
